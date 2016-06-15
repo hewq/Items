@@ -1,0 +1,102 @@
+/*---footer---*/
+.footer{border-top:3px solid #1f8504;margin-top:20px;clear:both;}
+.f_box
+{
+	width:1000px;
+	margin:0 auto;
+}
+.f_left
+{
+	width:65%;
+	float:left;
+}
+.f_list
+{
+	margin-top:10px;
+	width:130px;
+	float:left;
+	height:200px;
+}
+.f_list ul
+{
+	list-style:none;
+	line-height:25px;
+	font-family:"微软雅黑";
+	text-align:left;
+}
+.f_list ul li
+{
+	height:25px;
+}
+.fl_title
+{
+	color:#1f7800;
+	font-weight:bold;
+	font-size:14px;
+}
+.f_list ul li a
+{
+	color:#1f7800;
+	text-decoration:none;
+	font-size:14px;
+}
+.f_list ul li a:hover{
+	border-bottom:1px dashed #ff6600;color:#ff6600;
+}
+.f_list ul li img
+{
+	float:left;
+	width:20px;
+	height:20px;
+	margin-top:2.5px;
+}
+.honor
+{
+	margin-left:15px;
+	vertical-align: middle;
+}
+.f_right
+{
+	width:35%;
+	float:left;
+}
+.fr_box
+{
+	padding:50px;
+}
+.fr_box p
+{
+	margin-top:5px;
+	margin-bottom:5px;
+	line-height:25px;
+	font-family:"微软雅黑";
+	font-size:16px;
+	color:#56a83b;
+}
+.fr_box span
+{
+	font-size:24px;
+	font-family:"微软雅黑";
+	color:#56a83b;
+}
+.page_list{ line-height:30px; margin:0px; padding:0px;}
+.page_list span{ line-height:30px; color:#333;}
+
+
+
+
+
+
+
+.yue{ font-size:14px;color:#666; float:left;line-height:46px;}
+.yue a:hover{ text-decoration:underline;}
+
+.copys{font-size: 14px;color: #666;line-height: 24px; float:right;line-height:46px;}
+
+
+.footmenu{ height:135px; width:100%; background:#dddddd;}
+.f_top{ height:46px; width:1000px; margin:auto;}
+.f_bottom{ line-height:88px; height:88px;border-top:1px solid #fff;width:100%;text-align:center; clear:both;}
+
+
+

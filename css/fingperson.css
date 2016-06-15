@@ -1,0 +1,458 @@
+/* CSS Document */
+#main{
+	width:90%;
+	height:auto;
+	margin-left:50px;
+	background-color:#fff;
+}
+#classify{
+	width:200px;
+	height:35px;
+	display:inline-block;
+	background-color:#75c557;
+	text-align:center;
+}
+#header_adiv{
+	width:100px;
+	height:35px;
+	margin-left:1250px;
+	margin-top:-50px;
+	display:inline-block;
+}
+.classify_a{
+	position:absolute;
+	width:200px;
+	height:35px;
+	margin-left:-100px;
+	display:inline-block;
+	font-family:"宋体";
+	font-size:18px;
+	text-decoration:none;
+	color:#fff;
+	line-height:35px;
+}
+.classify_type{
+	position:absolute;
+	top:35px;
+	left:471px;
+	width:200px;
+	height:35px;
+	background-color:#75c557;
+	display:inline-block;
+	z-index:100;
+	display:none;
+}
+.classify_type1{
+	position:absolute;
+	top:70px;
+	left:471px;
+	width:200px;
+	height:35px;
+	background-color:#75c557;
+	display:inline-block;
+	z-index:100;
+	display:none;
+}
+.classify_type_aprofession{
+	width:100%;
+	height:35px;
+	border:1px solid red;
+}
+.classify_type_a{
+	position:absolute;
+	margin-left:-100px;
+	display:inline-block;
+	width:100%;
+	height:35px;
+	font-family:"宋体";
+	color:#fff;
+	line-height:35px;
+	text-decoration:none;
+	font-weight:bold;
+}
+#classify_type_profession_type{
+	margin-left:200px;
+	display:inline-block;
+	width:140px;
+	height:390px;
+	background-color:#fff;
+	z-index:100;
+	padding-top:10px;
+	border:1px solid #cccccc;
+	border-left:2px solid #cccccc;
+	display:none;
+}
+.classify_type_profession{
+	display:inline-block;
+	width:140px;
+	height:30px;
+	background-color:#fff;
+	z-index:100;
+	display:none;
+}
+.classify_type_profession_a{
+	display:inline-block;
+	width:89%;
+	height:30px;
+	text-decoration:none;
+	font-family:"宋体";
+	font-size:14px;
+	color:#787878;
+	line-height:30px;
+	text-align:left;
+	padding-left:15px;
+}
+.classify_type_profession_a_right{
+	color:#ffcc00;
+	text-align:right;
+	font-weight:bold;
+}
+.classify_type_profession_a_div{
+	position:absolute;
+	z-index:101;
+	display:inline_block;
+	width:330px;
+	height:auto;
+	background-color:#fff;
+	border:1px solid #cccccc;
+	margin-left:140px;
+	margin-top:-40px;
+	display:none;
+}
+.classify_type_profession_a_div_table{
+	width:100%;
+	height:auto;
+	border-spacing:0;
+	border-collapse:0;
+	padding:10px;
+}
+.classify_type_profession_a_div_table tr{
+	height:30px;
+}
+.classify_type_profession_a_div_table tr td{
+	width:50%;
+	font-size:16px;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#787878;
+	text-align:center;
+	line-height:25px;
+}
+.classify_type_profession_a_div_table tr td:hover{
+	border-radius:5px;
+	background-color:#e4a752;
+}
+.classify_type_profession_a_div_table_a{
+	color:#787878;
+	text-decoration:none;
+}
+.classify_type_profession_a_div_table_a:hover{
+	color:#787878;
+	text-decoration:underline;
+}
+#classify_type_area{
+	width:425px;
+	height:auto;
+	background-color:#fff;
+	margin-left:200px;
+	margin-top:-10px;
+	display:none;
+	border:1px solid #cccccc;
+}
+.classify_type_area_table{
+	margin:5px;
+}
+.classify_type_area_tr{
+	height:35px;
+	margin:5px;
+}
+.classify_type_area_td{
+	width:70px;
+	margin:5px;
+}
+.classify_type_area_td a{
+	font-family:"宋体";
+	font-size:14px;
+	text-decoration:none;
+	color:#787878;
+	font-weight:bold;
+}
+.classify_type_area_td:hover{
+	background-color:#e4a752;
+	border-radius:5px;
+	text-align:center;
+}
+.classify_type_area_td:hover .classify_type_area_td_a{
+	color:#fff;
+	text-decoration:underline;
+}
+#div01{
+	width:98%;
+	height:300px;
+	margin-left:20px;
+}
+.div01_table{
+	width:370px;
+	height:260px;
+	border:1px solid #dfdddd;
+	float:left;
+	margin-left:20px;
+	margin-top:20px;
+}
+.div01_table tr{
+	border:1px solid #dfdddd;
+	width:100%;
+	height:37px;
+}
+.left_td{
+	text-align:left;
+}
+.right_td{
+	text-align:right;
+}
+.div01_table tr td{
+	border-bottom:1px solid #dfdddd;
+}
+.left_td_span{
+	margin-left:15px;
+	font-family:"宋体";
+	font-size:14px;
+	text-decoration:none;
+	color:#333333;
+}
+.left_td_span:hover{
+	text-decoration:underline;
+	color:#ff6600;
+}
+.right_td_span{
+	margin-right:15px;
+	font-family:"宋体";
+	font-size:14px;
+	color:#ff8f00;
+}
+.left_td_a{
+	margin-left:15px;
+	font-family:"宋体";
+	font-size:14px;
+	text-decoration:none;
+	color:#333333;
+}
+.left_td_a:hover{
+	text-decoration:underline;
+	color:#ff6600;
+}
+.div01_table03_span{
+	font-family:"宋体";
+	font-size:12px;
+	color:#00950c;
+}
+.table_header{
+	margin-left:15px;
+	font-family:"宋体";
+	font-size:16px;
+	font-weight:bold;
+}
+#div02{
+	width:98%;
+	height:340px;
+	margin-left:20px;
+}
+.div_header{
+	width:98%;
+	height:50px;
+	margin-left:20px;
+	padding-top:20px;
+}
+.div_container{
+	width:98%;
+	height:270px;
+	margin-left:20px;
+}
+.div_header_title{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:22px;
+	font-weight:bold;
+	color:#5b5a5a;
+	line-height:40px;
+}
+.div_header_a{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#848484;
+	text-decoration:none;
+	margin-left:1000px;
+}
+.div_header_a:hover{
+	text-decoration:underline;
+	color:#848484;
+}
+.div_container_img{
+	padding-left:8px;
+}
+#div03{
+	width:98%;
+	height:540px;
+	margin-top:20px;
+	margin-left:20px;
+}
+.div03_container_left{
+	width:778px;
+	height:460px;
+	float:left;
+}
+.div03_container_left_div{
+	width:172px;
+	height:222px;
+	border:1px solid #ebebeb;
+	float:left;
+	margin:10px;
+}
+.div03_container_right{
+	width:393px;
+	height:222px;
+	display:inline-block;
+	margin-top:-450px;
+	margin-left:780px;
+}
+.div03_container_right_a{
+	display:inline-block;
+	margin-top:24px;
+}
+.div03_container_left_div_a_img{
+	display:inline-block;
+	padding:20px;
+}
+.name_a{
+	margin-left:20px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-decoration:none;
+	color:#333333;
+	line-height:20px;
+}
+.name_a:hover{
+	color:#ff6600;
+}
+.grade_span{
+	margin-left:20px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-decoration:none;
+	color:#333333;
+}
+#div04{
+	width:98%;
+	height:500px;
+	margin-top:20px;
+	margin-left:20px;
+}
+.div04_container_left{
+	width:900px;
+	height:400px;
+}
+.div04_container_left_div{
+	width:277px;
+	height:185px;
+	border:1px solid #ebebeb;
+	float:left;
+	margin:10px;
+}
+.div04_container_right{
+	width:250px;
+	height:415px;
+	display:inline-block;
+	margin-top:-428px;
+	margin-left:900px;
+}
+.div04_container_right_span{
+	background-color:#feae01;
+	width:150px;
+	height:30px;
+	display:inline-block;
+	text-align:center;
+	line-height:28px;
+	color:#7c4900;
+	margin-top:25px;
+}
+.div04_container_right_div{
+	width:100%;
+	height:85px;
+	border-bottom:1px dashed #dddddd;
+}
+.div04_container_right_div1{
+	margin-top:10px;
+	width:100%;
+	height:115px;
+	border-bottom:1px dashed #dddddd;
+}
+.div04_container_left_div_up{
+	width:100%;
+	height:100px;
+}
+.div04_container_left_div_up_right{
+	height:115px;
+	width:150px;
+	border-bottom:1px solid #cccccc;
+	float:right;
+	margin-right:5px;
+}
+.div04_container_left_div_up_a{
+	display:inline-block;
+	margin-left:20px;
+	margin-top:10px;
+}
+.div04_container_left_div_up_right_a{
+	font-family:"微软雅黑";
+	display:inline-block;
+	font-size:16px;
+	font-weight:bold;
+	color:#333333;
+	text-decoration:none;
+	line-height:30px;
+	margin-top:15px;
+}
+.div04_container_left_div_up_right_span1{
+	font-family:"宋体";
+	font-size:12px;
+	color:#999999;
+	line-height:20px;
+}
+.div04_container_left_div_up_right_span2{
+	color:#ff6600;
+}
+.div04_container_left_div_down_span1{
+	font-family:"宋体";
+	font-size:12px;
+	font-weight:bold;
+	line-height:30px;
+	margin-left:20px;
+}
+.div04_container_left_div_down_span2{
+	color:#ff6600;
+}
+.div04_container_left_div_down_a{
+	margin-left:20px;
+	font-family:"宋体";
+	font-size:12px;
+	color:#ff6600;
+	text-decoration:none;
+	line-height:20px;
+}
+.div04_container_left_div_down_a_span{
+	color:#208dd6;
+}
+.div04_container_left_div_down_a:hover .div04_container_left_div_down_a_span{
+	color:#ff6600;
+}
+#div05{
+	display:inline-block;
+	width:98%;
+	height:340px;
+	margin-top:20px;
+	margin-left:20px;
+}
+#div06{
+	width:98%;
+	height:340px;
+	margin-top:20px;
+	margin-left:20px;
+}

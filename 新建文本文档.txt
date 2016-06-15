@@ -1,0 +1,47 @@
+
+注册代码
+
+
+<form action="${pageContext.request.contextPath }/registerServlets" method="post">
+   
+             用户名 :&nbsp;&nbsp;<input type="text" name="username" value="${formbean.username }">${formbean.errors.username }<br/>
+             密码：&nbsp;&nbsp;&nbsp;&nbsp;<input type="password" name="password" value="${formbean.password }">${formbean.errors.password }<br/>
+             确认密码：<input type="password" name="password2" value="${formbean.password2 }">${formbean.errors.password2 }<br/>
+             客户类型：<input type="text" name="type" value="${formbean.type }">${formbean.errors.type }<br/>
+             邮箱：&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="email" value="${formbean.email }">${formbean.errors.email }<br/>
+             地址：&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="address" value="${formbean.address }">${formbean.errors.address }<br/>
+             手机号码：<input type="text" name="phone" value="${formbean.phone }">${formbean.errors.phone }<br/>
+             从哪知道本站的： &nbsp;
+             <select name="source">
+             <option value="搜索引擎">搜索引擎</option>
+             <option value="朋友介绍">朋友介绍</option>
+             <option value="QQ群">QQ群</option>
+             <option value="建设论坛">建设论坛</option>
+             <option value="新浪微博">新浪微博</option>
+             <option value="人人网">人人网</option>
+             <option value="豆瓣贴吧">豆瓣贴吧</option>
+             <option value="其他">其他</option>
+             
+             </select><br/><br/>
+             
+      <input type="checkbox" name="agree" />我已仔细阅读过注册条款，并同意条款<br/>
+      <input type="reset" value="清空">
+      <input type="submit" value="注册">
+    	
+    </form>
+
+
+登录代码
+
+
+
+ <form action="${pageContext.request.contextPath }/loginServlets" method="post">
+    	用户名：<input type="text" name="username"><br/>
+    	密码：<input type="password" name="password"><br/>
+    	类型:<input type="text" name="type"><br/>
+    	<input type="submit" value="登陆">
+    </form>
+
+
+
+

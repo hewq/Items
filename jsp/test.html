@@ -1,0 +1,682 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>找项目</title>
+<link rel="stylesheet" href="../css/index.css"/>
+<link rel="stylesheet" href="../css/finditem.css"/>
+<link rel="stylesheet" href="../css/ui.tabs.css" type="text/css" media="print, projection, screen">
+<link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery1.js"></script>
+<script src="../js/ui.tabs.pack.js" type="text/javascript"></script>
+<script src="../js/jquery.paginate.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		/*回到顶部*/
+		var e = $("#rocket-to-top"),
+		t = $(document).scrollTop(),
+		n,
+		r,
+		i = !0;
+		$(window).scroll(function() {
+			var t = $(document).scrollTop();
+			t == 0 ? e.css("background-position") == "0px 0px" ? e.fadeOut("slow") : i && (i = !1, $(".level-2").css("opacity", 1), e.delay(100).animate({
+				marginTop: "-1000px"
+			},
+			"normal",
+			function() {
+				e.css({
+					"margin-top": "-125px",
+					display: "none"
+				}),
+				i = !0
+			})) : e.fadeIn("slow")
+		}),
+		e.hover(function() {
+			$(".level-2").stop(!0).animate({
+				opacity: 1
+			})
+		},
+		function() {
+			$(".level-2").stop(!0).animate({
+				opacity: 0
+			})
+		}),
+		$(".level-3").click(function() {
+			function t() {
+				var t = e.css("background-position");
+				if (e.css("display") == "none" || i == 0) {
+					clearInterval(n),
+					e.css("background-position", "0px 0px");
+					return
+				}
+				switch (t){
+				case "0px 0px":
+					e.css("background-position", "-298px 0px");
+					break;
+				case "-298px 0px":
+					e.css("background-position", "-447px 0px");
+					break;
+				case "-447px 0px":
+					e.css("background-position", "-596px 0px");
+					break;
+				case "-596px 0px":
+					e.css("background-position", "-745px 0px");
+					break;
+				case "-745px 0px":
+					e.css("background-position", "-298px 0px");
+				}
+			}
+			if (!i) return;
+			n = setInterval(t, 50),
+			$("html,body").animate({scrollTop: 0},"slow");
+		});
+		/*隐藏/展开筛选*/
+			$("#more").toggle(function(){					
+						$("#item_time").slideToggle();
+						$("#item_standard").slideToggle();
+						$(this).css("background-image","url(../images/down.png)");
+						$(this).html("更多");
+					},function(){					
+						$("#item_time").slideToggle();
+						$("#item_standard").slideToggle();
+						$(this).css("background-image","url(../images/up.png)");
+						$(this).html("收起");
+					},true);
+		/*卡片式排序选项*/						
+		$('#container-1 > ul').tabs();
+		/*项目展开详细内容
+			改变背景色*/
+		$(".item_details").mouseover(function(){
+			$(this).css("background-color","#f6f6f6");
+			$(this).find(".details_left_message").show();
+		});
+		$(".item_details").mouseout(function(){
+			$(this).css("background-color","#fff");
+		});
+		$(".promote_detail").mouseover(function(){
+			$(this).css("background-color","#f6f6f6");
+			$(this).find(".details_left_message").show();
+		});
+		$(".promote_detail").mouseout(function(){
+			$(this).css("background-color","#f2f9fb");
+		});
+		/*隐藏/展开推广项目*/
+		$("#promote span").toggle(function(){
+						$("#promote_details").slideToggle();
+						$(this).html("展开推广项目");					
+					},function(){
+						$("#promote_details").slideToggle();
+						$(this).html("收起推广项目");					
+					},true);
+		/*前端分页效果*/
+		$("#paging").paginate({
+				count 		: 50,
+				start 		: 5,
+				display     : 10,
+				border					: false,
+				text_color  			: '#888',
+				background_color    	: '#fff',	
+				text_hover_color  		: 'black',
+				background_hover_color	: '#CFCFCF'
+			});
+		/*右边表格变色*/
+		$("#td1").mouseover(function(){
+			$(this).css("background-color","#a7b923");
+			$(this).find("span").css("color","#fff");
+		});
+		$("#td1").mouseout(function(){
+			$(this).css("background-color","#fff");
+			$(this).find("span").css("color","#a7b923");
+		});
+		$("#td2").mouseover(function(){
+			$(this).css("background-color","#fc924c");
+			$(this).find("span").css("color","#fff");
+		});
+		$("#td2").mouseout(function(){
+			$(this).css("background-color","#fff");
+			$(this).find("span").css("color","#fc924c");
+		});
+		$("#td3").mouseover(function(){
+			$(this).css("background-color","#f25272");
+			$(this).find("span").css("color","#fff");
+		});
+		$("#td3").mouseout(function(){
+			$(this).css("background-color","#fff");
+			$(this).find("span").css("color","#f25272");
+		});
+		$("#td4").mouseover(function(){
+			$(this).css("background-color","#2da1e7");
+			$(this).find("span").css("color","#fff");
+		});
+		$("#td4").mouseout(function(){
+			$(this).css("background-color","#fff");
+			$(this).find("span").css("color","#2da1e7");
+		});
+		$("#td5").mouseover(function(){
+			$(this).css("background-color","#d38c54");
+			$(this).find("span").css("color","#fff");
+		});
+		$("#td5").mouseout(function(){
+			$(this).css("background-color","#fff");
+			$(this).find("span").css("color","#d38c54");
+		});
+		$("#td6").mouseover(function(){
+			$(this).css("background-color","#03b1c1");
+			$(this).find("span").css("color","#fff");
+		});
+		$("#td6").mouseout(function(){
+			$(this).css("background-color","#fff");
+			$(this).find("span").css("color","#03b1c1");
+		});
+		/*成功案例显示详细信息*/
+		$(".fourth_div").mouseover(function(){
+			$(this).find(".describe").slideDown();
+			$(this).find(".describe").css("display","inline-block");
+		});
+		$(".fourth_div").mouseout(function(){
+			$(this).find(".describe").fadeOut();
+			$(this).find(".describe").css("display","none");
+		});
+	});
+</script>
+</head>
+
+<body>
+	<!-- 回到顶部 -->
+	<div style="display: none;" id="rocket-to-top">
+		<div style="opacity:0;display: block;" class="level-2"></div>
+		<div class="level-3"></div>
+	</div>
+	<!-- 导航条 -->
+	<header>
+		<ul>
+			<li><a href="#">首页</a><span>|</span></li>
+			<li>
+				<a href="#">服务内容</a>
+				<ul >
+					<li><a href="#">找项目</a></li>
+					<li><a href="#">找研发人员</a></li>
+					<li><a href="#">咨询服务</a></li>
+					<li><a href="#">悬赏大厅</a></li>
+					<li><a href="#">发布要求</a></li>
+					<li><a href="#">项目匹配</a></li>
+					<li><a href="#">人才培养</a></li>
+					<li><a href="#">高成工厂</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li>
+				<a href="#">担保评估</a>
+				<ul>
+					<li><a href="#">重大开发项目</a></li>
+					<li><a href="#">成果转化</a></li>
+					<li><a href="#">担保评价</a></li>
+					<li><a href="#">投资体系</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li>
+				<a href="#">发布信息</a>
+				<ul>
+					<li><a href="#">活动组织</a></li>
+					<li><a href="#">数据信息</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li><a href="#">报道</a><span>|</span></li>
+			<li>
+				<a href="#">信息提交</a>
+				<ul>
+					<li><a href="#">需求提交</a></li>
+					<li><a href="#">成果提交</a></li>
+					<li><a href="#">评审提交</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li><a href="#">外包服务</a><span>|</span></li>
+			<li><a href="#">知识产权</a><span>|</span></li>
+			<li><a href="#">检验检测</a></li>
+		</ul>
+		<div id="header_adiv">
+			<a href="#" class="header_a">登录</a>
+			<a href="#" class="header_a">注册</a>
+		</div>
+	</header>
+	<!-- 导航条结束 -->
+	<!-- 网页主要内容 -->
+	<div id="main">
+		<div id="location">
+			<span>当前位置：</span><a href="#">首页</a>>><a href="#">悬赏大厅</a>
+		</div>
+		<div id="full"></div>
+		<div id="fitem_content">
+				<!-- 左边开始 -->
+				<div id="fitem_left">
+					<!-- 左边头部 -->
+					<div id="item_filter">	
+						<div id="item_model">
+							<span>项目模式：</span>
+							<a href="#">不限</a>
+							<a href="#">全额悬赏</a>
+							<a href="#">招标项目</a>
+							<div id="more" class="up">收起</div>
+						</div>
+						<div id="item_time">
+							<span>结束时间：</span>
+							<a href="#">不限</a>
+							<a href="#">今日</a>
+							<a href="#">三日内</a>
+							<a href="#">本周内</a>
+							<a href="#">本月内</a>
+							<a href="#">本季度内</a>
+							<a href="#">本年内</a>
+						</div>
+						<div id="item_standard">
+							<span>承诺选标：</span>
+							<a href="#">不限</a>
+							<a href="#">未承诺选标</a>
+							<a href="#">已承诺选标</a>
+						</div>
+					</div>
+					<div id="left_down">
+						<div id="item_condition">
+							<ul>
+								<li><a href="#">所有项目</a></li>
+								<li><a href="#">进行中</a></li>
+								<li><a href="#">圆满结束</a></li>
+							</ul>
+							<div id="capacity">
+								<span>每页显示</span>
+								<button>20</button>
+								<button>30</button>
+								<button>50</button>
+							</div>
+						</div>
+						<div id="item_sort">
+							<div id="container-1">
+								<span title="默认排序">排序方式</span>
+								<ul>
+									<li><a href="#fragment-1" title="按最新项目排序"><span>最 新</span></a></li>
+									<li><a href="#fragment-1" title="按最热项目排序"><span>最 热</span></a></li>
+									<li><a href="#fragment-1" title="按快结束项目排序"><span>快结束</span></a></li>
+									<li><a href="#fragment-1" title="按金额由高到低排序"><span>金 额</span></a></li>
+								</ul>
+								<div id="fragment-1">
+								</div>
+								<div id="form">
+									<form method="post" action="#">
+										<div id="money_range">
+											￥ <input type="text" name="start" class="moneyinput" />&nbsp;至&nbsp;<input type="text" name="end" class="moneyinput" />
+										</div>
+										<div id="money_submit">
+											<button type="submit">确定</button>
+										</div>
+									</form>
+								</div>
+							</div>   
+						</div>
+						<!-- 左边头部结束 -->
+						<div id="item_detail">
+							<div id="promote">
+								<span>收起推广项目</span>
+							</div>
+							<div id="promote_details">
+							<table class="promote_table" cellpadding="0" cellspacing="0">
+								<tr class="promote_tr">
+									<td class="promote_td">
+											<div class="promote_detail">
+												<div class="details_left">
+													<div class="details_left_title">
+														<a href="#">
+															<span class="details_money">￥500</span><span class="details_title">电子科技公司LOGO设计</span>
+														</a>
+													</div>
+													<div class="details_left_message">
+														<p>企业简介 西安途漾电子科技有限公司位于西安高新技术产业开发区，专业服务于电力事业，公司的产品及服务覆盖电子...</p>
+													</div>
+												</div>
+												<div class="details_right">
+													<div class="details_right_left">
+														<img src="../images/yituoguan.png" />
+														<a href="#"><span>已托管</span></a>
+													</div>
+													<div class="details_right_midden">
+														<span class="number">3</span><span class="details_right_midden_text"> 人参与 | 悬赏</span><br />
+														<span class="time">7</span><span class="details_right_midden_text"> 天后截止</span>
+													</div>
+													<div class="details_right_right">
+														<button>立即参与</button>
+													</div>
+												</div>
+											</div>
+								  </td>
+							  </tr>
+									<tr class="promote_tr">
+										<td>
+											<div class="promote_detail">
+												<div class="details_left">
+													<div class="details_left_title">
+														<a href="#">
+															<span class="details_money">￥500</span><span class="details_title">电子科技公司LOGO设计</span>
+														</a>
+													</div>
+													<div class="details_left_message">
+														<p>企业简介 西安途漾电子科技有限公司位于西安高新技术产业开发区，专业服务于电力事业，公司的产品及服务覆盖电子...</p>
+													</div>
+												</div>
+												<div class="details_right">
+													<div class="details_right_left">
+														<img src="../images/yituoguan.png" />
+														<a href="#"><span>已托管</span></a>
+													</div>
+													<div class="details_right_midden">
+														<span class="number">3</span><span class="details_right_midden_text"> 人参与 | 悬赏</span><br />
+														<span class="time">7</span><span class="details_right_midden_text"> 天后截止</span>
+													</div>
+													<div class="details_right_right">
+														<button>立即参与</button>
+													</div>
+												</div>
+											</div>
+										</td>
+									</tr>
+									<tr class="promote_tr">
+										<td class="promote_td">
+											<div class="promote_detail">
+												<div class="details_left">
+													<div class="details_left_title">
+														<a href="#">
+															<span class="details_money">￥500</span><span class="details_title">电子科技公司LOGO设计</span>
+														</a>
+													</div>
+													<div class="details_left_message">
+														<p>企业简介 西安途漾电子科技有限公司位于西安高新技术产业开发区，专业服务于电力事业，公司的产品及服务覆盖电子...</p>
+													</div>
+												</div>
+												<div class="details_right">
+													<div class="details_right_left">
+														<img src="../images/yituoguan.png" />
+														<a href="#"><span>已托管</span></a>
+													</div>
+													<div class="details_right_midden">
+														<span class="number">3</span><span class="details_right_midden_text"> 人参与 | 悬赏</span><br />
+														<span class="time">7</span><span class="details_right_midden_text"> 天后截止</span>
+													</div>
+													<div class="details_right_right">
+														<button>立即参与</button>
+													</div>
+												</div>
+											</div>
+									</td>
+								</tr>
+							</table>
+							</div>
+							<table class="item_table" cellpadding="0" cellspacing="0">
+								<tr class="item_tr">
+									<td class="item_td">
+										<div class="item_details">
+											<div class="details_left">
+												<div class="details_left_title">
+													<a href="#">
+														<span class="details_money">￥500</span><span class="details_title">电子科技公司LOGO设计</span>
+													</a>
+												</div>
+												<div class="details_left_message">
+													<p>企业简介 西安途漾电子科技有限公司位于西安高新技术产业开发区，专业服务于电力事业，公司的产品及服务覆盖电子...</p>
+												</div>
+											</div>
+											<div class="details_right">
+												<div class="details_right_left">
+													<img src="../images/yituoguan.png" />
+													<a href="#"><span>已托管</span></a>
+												</div>
+												<div class="details_right_midden">
+													<span class="number">3</span><span class="details_right_midden_text"> 人参与 | 悬赏</span><br />
+													<span class="time">7</span><span class="details_right_midden_text"> 天后截止</span>
+												</div>
+												<div class="details_right_right">
+													<button>立即参与</button>
+												</div>
+											</div>
+										</div>
+										<div class="item_details"></div>
+										<div class="item_details"></div>
+										<div class="item_details"></div>
+									</td>
+								</tr>
+							</table>
+				  </div>
+			  </div>
+					<div id="paging"></div>	
+		  </div>
+				<!-- 左边结束 -->	
+				<!-- 右边开始 -->
+				<div id="fitem_right">
+					<div id="fitem_right_first">
+						<div id="fitem_right_first_title" class="fitem_right_first_div">
+							<span>热门项目标签</span>
+						</div>
+						<div id="fitem_right_first_header" class="fitem_right_first_div">
+							<img src="../images/fitem_right_first_header.png" />
+						</div>
+						<div id="fitem_right_first_container" class="fitem_right_first_div">
+							<table cellpadding="0" cellspacing="0">
+								<tr>
+									<td id="td1"><span class="td_span1">品牌标志</span></td>
+									<td id="td2"><span class="td_span2">公司logo设计</span></td>
+								</tr>
+								<tr>
+									<td id="td3"><span class="td_span3">产品包装设计</span></td>
+									<td id="td4"><span class="td_span4">现代简约</span></td>
+								</tr>
+								<tr>
+									<td id="td5"><span class="td_span5">企业VI设计</span></td>
+									<td id="td6"><span class="td_span6">羊宝宝起名</span></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div id="fitem_right_second">
+						<button>马上发布需求</button>
+					</div>
+					<div id="fitem_right_third">
+						<div id="fitem_right_third_div1">
+							<span>推荐服务商</span>
+							<a href="#">更多>></a>
+						</div>
+						<div id="fitem_right_third_div2" class="third_div">
+							<div id="third_left1" class="third_left">
+								<img src="../images/biyunchuan.png" />							
+							</div>
+							<div id="third_right1" class="third_right_up">
+								<div class="third_name">
+									<a href="#" title="碧云川设计工作室">碧云川设计工作室</a>
+								</div>
+								<div class="guyong" title="立即雇佣威客">
+									<span>立即</span><br />
+									<span>雇佣</span>
+								</div>
+								<div class="third_grade"></div>
+							</div>
+							<div id="third_right2" class="third_right_down">
+								<span class="haopinglv">好评率：</span><span class="percent">95.2%</span><br />
+								<span class="speciality">擅长：</span><span class="skill"><a href="#">LOGO设计</a>&nbsp;<a href="#">VI设计</a></span>							
+							</div>
+						</div>
+						<div id="fitem_right_third_div3" class="third_div">
+							<div class="third_left">
+								<img src="../images/miaozi.png" />							
+							</div>
+							<div class="third_right_up">
+								<div class="third_name">
+									<a href="#" title="苗子设计工作室">苗子设计工作室</a>
+								</div>
+								<div class="guyong" title="立即雇佣威客">
+									<span>立即</span><br />
+									<span>雇佣</span>
+								</div>
+								<div class="third_grade"></div>
+							</div>
+							<div id="third_right2" class="third_right_down">
+								<span class="haopinglv">好评率：</span><span class="percent">100%</span><br />
+								<span class="speciality">擅长：</span><span class="skill"><a href="#">LOGO设计</a>&nbsp;<a href="#">VI设计</a></span>							
+							</div>
+						</div>
+						<div id="fitem_right_third_div4" class="third_div">
+							<div class="third_left">
+								<img src="../images/longbo.png" />							
+							</div>
+							<div class="third_right_up">
+								<div class="third_name">
+									<a href="#" title="龙博品牌设计">龙博品牌设计</a>
+								</div>
+								<div class="guyong" title="立即雇佣威客">
+									<span>立即</span><br />
+									<span>雇佣</span>
+								</div>
+								<div class="third_grade"></div>
+							</div>
+							<div id="third_right2" class="third_right_down">
+								<span class="haopinglv">好评率：</span><span class="percent">100%</span><br />
+								<span class="speciality">擅长：</span><span class="skill"><a href="#">LOGO设计</a>&nbsp;<a href="#">VI设计</a></span>							
+							</div>
+						</div>
+					</div>
+					<div id="fitem_right_4th">
+						<div id="fourth_div1">
+							<span>成功案例</span>
+							<a href="#">更多>></a>
+						</div>
+						<div id="fourth_div2" class="fourth_div">
+							<a class="imga" href="#"><img src="../images/fangbei.png" /></a>
+							<div class="describe">
+								<div class="describe1">
+									<span class="describe_span">服务商:<a href="#">龙博品牌设计</a></span><br />
+									<span class="describe_span">成交价:<span class="price_span" style="color:#ff9000;">￥988元</span></span>
+								</div>
+								<div class="describe2">
+									<button>雇佣TA</button>
+								</div>
+								
+							</div>
+						</div>
+						<div id="fourth_div3" class="fourth_adiv">
+							<a href="#" class="fourth_a">方贝网LOGO设计</a>
+						</div>
+						<div id="fourth_div4" class="fourth_div">
+							<a class="imga" href="#"><img src="../images/chayin.png" /></a>
+						</div>
+						<div id="fourth_div5" class="fourth_adiv">
+							<a href="#" class="fourth_a">都市白领茶饮LOGO设计</a>
+						</div>
+						<div id="fourth_div6" class="fourth_div">
+							<a class="imga" href="#"><img src="../images/qinzi.png" /></a>
+						</div>
+						<div id="fourth_div7" class="fourth_adiv">
+							<a href="#" class="fourth_a">亲子教材包装设计</a>
+						</div>
+					</div>
+					<div id="fitem_right_5th">
+						<div id="fiveth_div1">
+							<span>推荐攻略</span>
+							<a href="#">更多>></a>
+						</div>
+						<div id="fiveth_div2" class="fiveth_div">
+							<div class="fiveth_div2_left">
+								<img src="../images/c.png" />
+							</div>
+							<div class="fiveth_div2_right">
+								<a href="#" class="ah1">柳青、柳甄 “天才”姐妹的进阶</a>
+								<a href="#" class="ah2">软件开发</a>
+							</div>
+						</div>
+						<div id="fiveth_div3" class="fiveth_div">
+							<div class="fiveth_div2_left">
+								<img src="../images/c.png" />
+							</div>
+							<div class="fiveth_div2_right">
+								<a href="#" class="ah1">柳青、柳甄 “天才”姐妹的进阶</a>
+								<a href="#" class="ah2">软件开发</a>
+							</div>
+						</div>
+						<div id="fiveth_div4" class="fiveth_div">
+							<div class="fiveth_div2_left">
+								<img src="../images/c.png" />
+							</div>
+							<div class="fiveth_div2_right">
+								<a href="#" class="ah1">柳青、柳甄 “天才”姐妹的进阶</a>
+								<a href="#" class="ah2">软件开发</a>
+							</div>
+						</div>
+						<div id="fiveth_div5" class="fiveth_div">
+							<div class="fiveth_div2_left">
+								<img src="../images/c.png" />
+							</div>
+							<div class="fiveth_div2_right">
+								<a href="#" class="ah1">柳青、柳甄 “天才”姐妹的进阶</a>
+								<a href="#" class="ah2">软件开发</a>
+							</div>
+						</div>
+						<div id="fiveth_div6" class="fiveth_div">
+							<div class="fiveth_div2_left">
+								<img src="../images/c.png" />
+							</div>
+							<div class="fiveth_div2_right">
+								<a href="#" class="ah1">柳青、柳甄 “天才”姐妹的进阶</a>
+								<a href="#" class="ah2">软件开发</a>
+							</div>
+						</div>
+						<div id="fiveth_div7" class="fiveth_div">
+							<div class="fiveth_div2_left">
+								<img src="../images/c.png" />
+							</div>
+							<div class="fiveth_div2_right">
+								<a href="#" class="ah1">柳青、柳甄 “天才”姐妹的进阶</a>
+								<a href="#" class="ah2">软件开发</a>
+							</div>
+						</div>
+					</div>
+					<div id="fitem_right_6th">
+						<div id="sixth_div1">
+							<span>创意问答</span>
+							<a href="#">更多>></a>
+						</div>
+						<div id="sixth_div2" class="sixth_div">
+							<p><a href="#" title="怎么查看雇主信息，比如手机号什么的，感觉被骗了。">怎么查看雇主信息，比如手机号什么的，感觉被骗了。</a></p>
+						</div>
+						<div id="sixth_div3" class="sixth_div">
+							<p><a href="#" title="我已经中标，，任务也已经圆满结束，为什么佣金还没到账。">我已经中标，，任务也已经圆满结束，为什么佣金还没到账。</a></p>
+						</div>
+						<div id="sixth_div4" class="sixth_div">
+							<p><a href="#" title="为什么用微波炉打饭，饭盒里面的饭还是冷的？">为什么用微波炉打饭，饭盒里面的饭还是冷的？</a></p>
+						</div>
+						<div id="sixth_div5" class="sixth_div">
+							<p><a href="#" title="父亲欠债，还不起，会牵扯子女去还吗？">父亲欠债，还不起，会牵扯子女去还吗？</a></p>
+						</div>
+						<div id="sixth_div6" class="sixth_div">
+							<p><a href="#" title="天气热了，办公室有的同事不吹空调，有的要吹空调？">天气热了，办公室有的同事不吹空调，有的要吹空调？</a></p>
+						</div>
+						<div id="sixth_div7" class="sixth_div">
+							<p><a href="#" title="不需要光合作用的植物有哪些？">不需要光合作用的植物有哪些？</a></p>
+						</div>
+					</div>
+				</div>
+				<!-- 右边结束 -->
+			</div>
+	</div>
+	<!-- 网页主要内容结束 -->
+	<!-- 底部 -->
+	<footer>
+		<ul>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">工具</a></li>
+			<li><a href="#">规则</a></li>
+			<li><a href="#">新手入门</a></li>
+			<li><a href="#">快速导航</a></li>
+		</ul>
+	</footer>
+	<!-- 底部结束 -->
+</body>
+</html>

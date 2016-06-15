@@ -1,0 +1,22 @@
+/* CSS Document */
+
+#4th_div1{
+	width:90%;
+	height:30px;
+	margin:20px;
+	border:1px solid #ff9000;
+}
+#4th_div1 span{
+	font-family:"ËÎÌו";
+	font-size:20px;
+	color:#a47878;
+	line-height:35px;
+	font-weight:bold;
+}
+#4th_div1 a{
+	font-family:"ËÎÌו";
+	font-size:20px;
+	color:#a47878;
+	line-height:35px;
+	font-weight:bold;
+}

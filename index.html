@@ -1,0 +1,156 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>找项目</title>
+<link rel="stylesheet" href="css/index.css"/>
+<link rel="stylesheet" href="css/finditem.css"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#more").click(
+			function(){
+					$("#item_time").slideToggle();
+					$("#item_standard").slideToggle();				
+			}
+		);
+	});
+</script>
+</head>
+
+<body>
+	<!-- 导航条 -->
+	<header>
+		<ul>
+			<li><a href="#">首页</a><span>|</span></li>
+			<li>
+				<a href="#">服务内容</a>
+				<ul >
+					<li><a href="#">找项目</a></li>
+					<li><a href="#">找研发人员</a></li>
+					<li><a href="#">咨询服务</a></li>
+					<li><a href="#">悬赏大厅</a></li>
+					<li><a href="#">发布要求</a></li>
+					<li><a href="#">项目匹配</a></li>
+					<li><a href="#">人才培养</a></li>
+					<li><a href="#">高成工厂</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li>
+				<a href="#">担保评估</a>
+				<ul>
+					<li><a href="#">重大开发项目</a></li>
+					<li><a href="#">成果转化</a></li>
+					<li><a href="#">担保评价</a></li>
+					<li><a href="#">投资体系</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li>
+				<a href="#">发布信息</a>
+				<ul>
+					<li><a href="#">活动组织</a></li>
+					<li><a href="#">数据信息</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li><a href="#">报道</a><span>|</span></li>
+			<li>
+				<a href="#">信息提交</a>
+				<ul>
+					<li><a href="#">需求提交</a></li>
+					<li><a href="#">成果提交</a></li>
+					<li><a href="#">评审提交</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li><a href="#">外包服务</a><span>|</span></li>
+			<li><a href="#">知识产权</a><span>|</span></li>
+			<li><a href="#">检验检测</a></li>
+		</ul>
+		<div id="header_adiv">
+			<a href="#" class="header_a">登录</a>
+			<a href="#" class="header_a">注册</a>
+		</div>
+	</header>
+	<!-- 导航条结束 -->
+	<!-- 网页主要内容 -->
+	<div id="main">
+		<div id="location">
+			<span>当前位置：</span><a href="#">首页</a>>><a href="#">悬赏大厅</a>
+		</div>
+		<div id="fitem_content">
+			<!-- 左边开始 -->
+			<div id="fitem_left">
+				<!-- 左边头部 -->
+				<div id="item_filter">	
+					<div id="item_model">
+						<span>项目模式：</span>
+						<a href="#">不限</a>
+						<a href="#">全额悬赏</a>
+						<a href="#">招标项目</a>
+						<div id="more" class="show">更多</div>
+					</div>
+					<div id="item_time">
+						<span>结束时间：</span>
+						<a href="#">不限</a>
+						<a href="#">今日</a>
+						<a href="#">三日内</a>
+						<a href="#">本周内</a>
+						<a href="#">本月内</a>
+						<a href="#">本季度内</a>
+						<a href="#">本年内</a>
+					</div>
+					<div id="item_standard">
+						<span>承诺选标：</span>
+						<a href="#">不限</a>
+						<a href="#">未承诺选标</a>
+						<a href="#">已承诺选标</a>
+					</div>
+				</div>
+				<div id="item_condition">
+					<ul>
+						<li><a href="#">所有项目</a></li>
+						<li><a href="#">进行中</a></li>
+						<li><a href="#">圆满结束</a></li>
+					</ul>
+				</div>
+				<div id="item_sort">
+					<div id="sort_type">
+						<span>排序方式</span>
+						<a href="#">最 新</a>
+						<a href="#">最 热</a>
+						<a href="#">快结束</a>
+						<a href="#">金 额</a>
+					</div>
+					<form method="post" action="#">
+						<div id="money_range">
+							￥ <input type="text" name="start" class="moneyinput" />&nbsp;至&nbsp;<input type="text" name="end" class="moneyinput" />
+						</div>
+						<div id="money_submit">
+							<button type="submit">确定</button>
+						</div>
+					</form>
+				</div>
+				<!-- 左边头部结束 -->
+				<div id="item_detail"></div>
+			</div>	
+			<!-- 左边结束 -->	
+			<div id="fitem_right"></div>
+		</div>
+	</div>
+	<!-- 网页主要内容结束 -->
+	<!-- 底部 -->
+	<footer>
+		<ul>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">工具</a></li>
+			<li><a href="#">规则</a></li>
+			<li><a href="#">新手入门</a></li>
+			<li><a href="#">快速导航</a></li>
+		</ul>
+	</footer>
+	<!-- 底部结束 -->
+</body>
+</html>
