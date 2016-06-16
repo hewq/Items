@@ -13,6 +13,50 @@
 <script src="../js/jquery.paginate.js" type="text/javascript"></script>
 <script type="text/javascript">
 	$(function(){
+		/*头部的下拉表效果*/
+		/*第一级*/
+		$("#classify").hover(function(){
+			$(".classify_type").show();
+			$(".classify_type1").show();
+			/*第二级第一个*/
+			$(".classify_type").hover(function(){
+				$("#classify_type_profession_type").show();
+				$(".classify_type_profession").show();
+				$(this).css("background","#fff");
+				$(this).find(".classify_type_a").css("color","#999999");
+				/*第三级*/
+				$(".classify_type_profession").hover(function(){
+					$(this).css("background-color","#b8e3ff");
+					$(this).find(".classify_type_profession_a_div").show();
+				},function(){
+					$(this).css("background-color","#fff");
+					$(this).find(".classify_type_profession_a_div").hide();
+				});
+				/*第三级结束*/
+			},function(){
+				$("#classify_type_profession_type").hide();
+				$("#classify_type_profession").hide();
+				$(this).css("background","#75c557");
+				$(this).find(".classify_type_a").css("color","#fff");
+			});
+			/*第二级结束*/
+			/*第二级第二个*/
+			$(".classify_type1").hover(function(){
+				$(this).css("background","#fff");
+				$(this).find(".classify_type_a").css("color","#999999");
+				$("#classify_type_area").show();
+			},function(){
+				$(this).css("background","#75c557");
+				$(this).find(".classify_type_a").css("color","#fff");
+				$("#classify_type_area").hide();
+			});
+			/*第二级结束*/
+		},function(){
+			$(".classify_type").hide();
+			$(".classify_type1").hide();
+		});
+		/*第一级结束*/
+		/***********************************************************************/
 		/*回到顶部*/
 		var e = $("#rocket-to-top"),
 		t = $(document).scrollTop(),
@@ -205,8 +249,7 @@
 					<li><a href="#">人才培养</a></li>
 					<li><a href="#">高成工厂</a></li>
 				</ul>
-				<span>|</span>
-			</li>
+				<span>|</span>			</li>
 			<li>
 				<a href="#">担保评估</a>
 				<ul>
@@ -215,16 +258,14 @@
 					<li><a href="#">担保评价</a></li>
 					<li><a href="#">投资体系</a></li>
 				</ul>
-				<span>|</span>
-			</li>
+				<span>|</span>			</li>
 			<li>
 				<a href="#">发布信息</a>
 				<ul>
 					<li><a href="#">活动组织</a></li>
 					<li><a href="#">数据信息</a></li>
 				</ul>
-				<span>|</span>
-			</li>
+				<span>|</span>			</li>
 			<li><a href="#">报道</a><span>|</span></li>
 			<li>
 				<a href="#">信息提交</a>
@@ -233,8 +274,7 @@
 					<li><a href="#">成果提交</a></li>
 					<li><a href="#">评审提交</a></li>
 				</ul>
-				<span>|</span>
-			</li>
+				<span>|</span>			</li>
 			<li><a href="#">外包服务</a><span>|</span></li>
 			<li><a href="#">知识产权</a><span>|</span></li>
 			<li><a href="#">检验检测</a></li>

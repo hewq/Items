@@ -1,0 +1,1440 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>所有服务</title>
+<link rel="stylesheet" href="../css/index.css"/>
+<link rel="stylesheet" href="../css/allserver.css"/>
+<link rel="stylesheet" href="../css/ui.tabs.css" type="text/css" media="print, projection, screen">
+<link rel="stylesheet" type="text/css" href="../css/style.css" media="screen"/>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script type="text/javascript" src="../js/jquery1.js"></script>
+<script src="../js/ui.tabs.pack.js" type="text/javascript"></script>
+<script src="../js/jquery.paginate.js" type="text/javascript"></script>
+<script type="text/javascript">
+	$(function(){
+		/*头部的下拉表效果*/
+		/*第一级*/
+		$("#classify").hover(function(){
+			$(".classify_type").show();
+			$(".classify_type1").show();
+			/*第二级第一个*/
+			$(".classify_type").hover(function(){
+				$("#classify_type_profession_type").show();
+				$(".classify_type_profession").show();
+				$(this).css("background","#fff");
+				$(this).find(".classify_type_a").css("color","#999999");
+				/*第三级*/
+				$(".classify_type_profession").hover(function(){
+					$(this).css("background-color","#b8e3ff");
+					$(this).find(".classify_type_profession_a_div").show();
+				},function(){
+					$(this).css("background-color","#fff");
+					$(this).find(".classify_type_profession_a_div").hide();
+				});
+				/*第三级结束*/
+			},function(){
+				$("#classify_type_profession_type").hide();
+				$("#classify_type_profession").hide();
+				$(this).css("background","#75c557");
+				$(this).find(".classify_type_a").css("color","#fff");
+			});
+			/*第二级结束*/
+			/*第二级第二个*/
+			$(".classify_type1").hover(function(){
+				$(this).css("background","#fff");
+				$(this).find(".classify_type_a").css("color","#999999");
+				$("#classify_type_area").show();
+			},function(){
+				$(this).css("background","#75c557");
+				$(this).find(".classify_type_a").css("color","#fff");
+				$("#classify_type_area").hide();
+			});
+			/*第二级结束*/
+		},function(){
+			$(".classify_type").hide();
+			$(".classify_type1").hide();
+		});
+		/*第一级结束*/
+		/***********************************************************************/
+		/*回到顶部*/
+		var e = $("#rocket-to-top"),
+		t = $(document).scrollTop(),
+		n,
+		r,
+		i = !0;
+		$(window).scroll(function() {
+			var t = $(document).scrollTop();
+			t == 0 ? e.css("background-position") == "0px 0px" ? e.fadeOut("slow") : i && (i = !1, $(".level-2").css("opacity", 1), e.delay(100).animate({
+				marginTop: "-1000px"
+			},
+			"normal",
+			function() {
+				e.css({
+					"margin-top": "-125px",
+					display: "none"
+				}),
+				i = !0
+			})) : e.fadeIn("slow")
+		}),
+		e.hover(function() {
+			$(".level-2").stop(!0).animate({
+				opacity: 1
+			})
+		},
+		function() {
+			$(".level-2").stop(!0).animate({
+				opacity: 0
+			})
+		}),
+		$(".level-3").click(function() {
+			function t() {
+				var t = e.css("background-position");
+				if (e.css("display") == "none" || i == 0) {
+					clearInterval(n),
+					e.css("background-position", "0px 0px");
+					return
+				}
+				switch (t){
+				case "0px 0px":
+					e.css("background-position", "-298px 0px");
+					break;
+				case "-298px 0px":
+					e.css("background-position", "-447px 0px");
+					break;
+				case "-447px 0px":
+					e.css("background-position", "-596px 0px");
+					break;
+				case "-596px 0px":
+					e.css("background-position", "-745px 0px");
+					break;
+				case "-745px 0px":
+					e.css("background-position", "-298px 0px");
+				}
+			}
+			if (!i) return;
+			n = setInterval(t, 50),
+			$("html,body").animate({scrollTop: 0},"slow");
+		});
+		/*隐藏/展开筛选*/
+			$("#more").toggle(function(){					
+						$("#item_time").slideToggle();
+						$("#item_standard").slideToggle();
+						$(this).css("background-image","url(../images/down.png)");
+						$(this).html("更多");
+					},function(){					
+						$("#item_time").slideToggle();
+						$("#item_standard").slideToggle();
+						$(this).css("background-image","url(../images/up.png)");
+						$(this).html("收起");
+					},true);
+		/*卡片式排序选项*/						
+		$('#container-1 > ul').tabs();
+		/*右边表格变色*/
+		$("#td1").mouseover(function(){
+			$(this).css("background-color","#a7b923");
+			$(this).find("span").css("color","#fff");
+		});
+		$("#td1").mouseout(function(){
+			$(this).css("background-color","#fff");
+			$(this).find("span").css("color","#a7b923");
+		});
+		$("#td2").mouseover(function(){
+			$(this).css("background-color","#fc924c");
+			$(this).find("span").css("color","#fff");
+		});
+		$("#td2").mouseout(function(){
+			$(this).css("background-color","#fff");
+			$(this).find("span").css("color","#fc924c");
+		});
+		$("#td3").mouseover(function(){
+			$(this).css("background-color","#f25272");
+			$(this).find("span").css("color","#fff");
+		});
+		$("#td3").mouseout(function(){
+			$(this).css("background-color","#fff");
+			$(this).find("span").css("color","#f25272");
+		});
+		$("#td4").mouseover(function(){
+			$(this).css("background-color","#2da1e7");
+			$(this).find("span").css("color","#fff");
+		});
+		$("#td4").mouseout(function(){
+			$(this).css("background-color","#fff");
+			$(this).find("span").css("color","#2da1e7");
+		});
+		$("#td5").mouseover(function(){
+			$(this).css("background-color","#d38c54");
+			$(this).find("span").css("color","#fff");
+		});
+		$("#td5").mouseout(function(){
+			$(this).css("background-color","#fff");
+			$(this).find("span").css("color","#d38c54");
+		});
+		$("#td6").mouseover(function(){
+			$(this).css("background-color","#03b1c1");
+			$(this).find("span").css("color","#fff");
+		});
+		$("#td6").mouseout(function(){
+			$(this).css("background-color","#fff");
+			$(this).find("span").css("color","#03b1c1");
+		});
+		/*成功案例显示详细信息*/
+		$(".fourth_div").mouseover(function(){
+			$(this).find(".describe").slideDown();
+			$(this).find(".describe").css("display","inline-block");
+		});
+		$(".fourth_div").mouseout(function(){
+			$(this).find(".describe").fadeOut();
+			$(this).find(".describe").css("display","none");
+		});
+		/*筛选所在地区*/
+		$(".capacity_div").hover(function(){
+			$(".capacity_div_div").show();
+		},function(){
+			$(".capacity_div_div").hide();
+		});
+		/*显示综合评分详细*/
+		$(".details_right_right_div").hover(function(){
+			$(".details_right_right_div_div").show();
+		},function(){
+			$(".details_right_right_div_div").hide();
+		});
+	});
+</script>
+</head>
+
+<body>
+	<!-- 回到顶部 -->
+	<div style="display: none;" id="rocket-to-top">
+		<div style="opacity:0;display: block;" class="level-2"></div>
+		<div class="level-3"></div>
+	</div>
+	<!-- 导航条 -->
+	<header>
+		<!-- 分类下拉表 -->
+		<!-- 第一级 -->
+		<div id="classify">
+			<a href="#" class="classify_a">全部研发人员分类</a>
+			<!-- 第二级第一个 -->
+			<div class="classify_type">
+				<!--<div class="classify_type_aprofession">-->
+					<a href="#" id="classify_type_a1" class="classify_type_a">按行业分类&nbsp;&nbsp;&nbsp;&nbsp;>></a>
+					<!-- 第三级整体 -->
+					<div id="classify_type_profession_type">
+					<!-- 第三级第一个 -->
+					<div class="classify_type_profession">
+						<a href="#" class="classify_type_profession_a">平面设计&nbsp;&nbsp;&nbsp;<font class="classify_type_profession_a_right">>></font></a>
+						<div class="classify_type_profession_a_div">
+							<table class="classify_type_profession_a_div_table">
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- 第三级第一个结束 -->
+					<!-- 第三级第二个 -->
+					<div class="classify_type_profession">
+						<a href="javascript:;" class="classify_type_profession_a">装修设计&nbsp;&nbsp;&nbsp;<font class="classify_type_profession_a_right">>></font></a>
+						<div class="classify_type_profession_a_div">
+							<table class="classify_type_profession_a_div_table">
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- 第三级第二个结束 -->
+					<!-- 第三级第三一个 -->
+					<div class="classify_type_profession">
+						<a href="javascript:;" class="classify_type_profession_a">建筑设计&nbsp;&nbsp;&nbsp;<font class="classify_type_profession_a_right">>></font></a>
+						<div class="classify_type_profession_a_div">
+							<table class="classify_type_profession_a_div_table">
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- 第三级第三个结束 -->
+					<!-- 第三级第四个 -->
+					<div class="classify_type_profession">
+						<a href="javascript:;" class="classify_type_profession_a">工业设计&nbsp;&nbsp;&nbsp;<font class="classify_type_profession_a_right">>></font></a>
+						<div class="classify_type_profession_a_div">
+							<table class="classify_type_profession_a_div_table">
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- 第三级第四个结束 -->
+					<!-- 第三级第五个 -->
+					<div class="classify_type_profession">
+						<a href="javascript:;" class="classify_type_profession_a">网站设计&nbsp;&nbsp;&nbsp;<font class="classify_type_profession_a_right">>></font></a>
+						<div class="classify_type_profession_a_div">
+							<table class="classify_type_profession_a_div_table">
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- 第三级第五个结束 -->
+					<!-- 第三级第六个 -->
+					<div class="classify_type_profession">
+						<a href="javascript:;" class="classify_type_profession_a">软件开发&nbsp;&nbsp;&nbsp;<font class="classify_type_profession_a_right">>></font></a>
+						<div class="classify_type_profession_a_div">
+							<table class="classify_type_profession_a_div_table">
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- 第三级第六个结束 -->
+					<!-- 第三级第七个 -->
+					<div class="classify_type_profession">
+						<a href="javascript:;" class="classify_type_profession_a">起名改名&nbsp;&nbsp;&nbsp;<font class="classify_type_profession_a_right">>></font></a>
+						<div class="classify_type_profession_a_div">
+							<table class="classify_type_profession_a_div_table">
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- 第三级第七个结束 -->
+					<!-- 第三级第八个 -->
+					<div class="classify_type_profession">
+						<a href="javascript:;" class="classify_type_profession_a">策划文案&nbsp;&nbsp;&nbsp;<font class="classify_type_profession_a_right">>></font></a>
+						<div class="classify_type_profession_a_div">
+							<table class="classify_type_profession_a_div_table">
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- 第三级第八个结束 -->
+					<!-- 第三级第九个 -->
+					<div class="classify_type_profession">
+						<a href="javascript:;" class="classify_type_profession_a">营销推广&nbsp;&nbsp;&nbsp;<font class="classify_type_profession_a_right">>></font></a>
+						<div class="classify_type_profession_a_div">
+							<table class="classify_type_profession_a_div_table">
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- 第三级第九个结束 -->
+					<!-- 第三级第十个 -->
+					<div class="classify_type_profession">
+						<a href="javascript:;" class="classify_type_profession_a">翻译服务&nbsp;&nbsp;&nbsp;<font class="classify_type_profession_a_right">>></font></a>
+						<div class="classify_type_profession_a_div">
+							<table class="classify_type_profession_a_div_table">
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- 第三级第十个结束 -->
+					<!-- 第三级第十一个 -->
+					<div class="classify_type_profession">
+						<a href="javascript:;" class="classify_type_profession_a">生活服务&nbsp;&nbsp;&nbsp;<font class="classify_type_profession_a_right">>></font></a>
+						<div class="classify_type_profession_a_div">
+							<table class="classify_type_profession_a_div_table">
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- 第三级第十一个结束 -->
+					<!-- 第三级第十二个 -->
+					<div class="classify_type_profession">
+						<a href="javascript:;" class="classify_type_profession_a">招聘找人&nbsp;&nbsp;&nbsp;<font class="classify_type_profession_a_right">>></font></a>
+						<div class="classify_type_profession_a_div">
+							<table class="classify_type_profession_a_div_table">
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- 第三级第十二个结束 -->
+					<!-- 第三级第十三个 -->
+					<div class="classify_type_profession">
+						<a href="javascript:;" class="classify_type_profession_a">多媒体制作&nbsp;&nbsp;<font class="classify_type_profession_a_right">>></font></a>
+						<div class="classify_type_profession_a_div">
+							<table class="classify_type_profession_a_div_table">
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+								<tr>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">LOGO设计</a></td>
+									<td><a href="#" class="classify_type_profession_a_div_table_a">VI设计</a></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- 第三级第十三个结束 -->
+					</div>
+					<!--第三级整体结束-->
+		  </div>
+		  <!-- 第二级第一个结束 -->
+				<!--</div>-->
+				<!--<div class="classify_type_aprofession">-->
+				<!-- 第二级第二个 -->
+				<div class="classify_type1">
+					<a href="javascript:;" id="classify_type_a2" class="classify_type_a">按地区分类&nbsp;&nbsp;&nbsp;&nbsp;>></a>
+					<!-- 第三级第一个 -->
+					<div id="classify_type_area">
+						<table class="classify_type_area_table">
+							<tr class="classify_type_area_tr">
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">北京</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">上海</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">天津</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">重庆</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">河南</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">河北</a></td>
+							</tr>
+							<tr class="classify_type_area_tr">
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">山东</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">山西</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">湖南</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">湖北</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">广西</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">广东</a></td>
+							</tr>
+							<tr class="classify_type_area_tr">
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">黑龙江</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">吉林</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">辽宁</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">江苏</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">浙江</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">福建</a></td>
+							</tr>
+							<tr class="classify_type_area_tr">
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">安徽</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">江西</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">陕西</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">贵州</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">宁夏</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">甘肃</a></td>
+							</tr>
+							<tr class="classify_type_area_tr">
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">四川</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">云南</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">内蒙古</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">青海</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">西藏</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">新疆</a></td>
+							</tr>
+							<tr class="classify_type_area_tr">
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">海南</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">香港</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">澳门</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">台湾</a></td>
+								<td class="classify_type_area_td"><a href="#" class="classify_type_area_td_a">国外</a></td>
+								<td class="classify_type_area_td"></td>
+							</tr>
+						</table>
+					</div>
+					<!-- 第三级第一个结束 -->
+				</div>
+				<!-- 第二级第二个结束 -->
+				<!--</div>-->
+			</div>
+			<!-- 第一级结束 -->
+		<ul>
+			<li><a href="#">首页</a><span>|</span></li>
+			<li>
+				<a href="#">研发人员</a>
+				<span>|</span>
+			</li>
+			<li>
+				<a href="#">所有研发人员</a>
+				<span>|</span>
+			</li>
+			<li>
+				<a href="#">成功案例</a>
+			</li>
+		</ul>
+		<div id="header_adiv">
+			<a href="#" class="header_a">登录</a>
+			<a href="#" class="header_a">注册</a>
+		</div>
+	</header>
+	<!-- 网页主要内容 -->
+	<div id="main">
+		<div id="location">
+			<span>当前位置：</span><a href="#">首页</a>>><a href="#">查找开发人员</a>
+		</div>
+		<div id="full"></div>
+		<div id="fitem_content">
+				<!-- 左边开始 -->
+				<div id="fitem_left">
+					<!-- 左边头部 -->
+					<div id="item_filter">	
+						<span class="item_model_span">分 类：</span>
+						<div id="item_model">
+							<a href="#">不限</a>
+							<a href="#">平面设计</a>
+							<a href="#">装修设计</a>
+							<a href="#">起名改名</a>
+							<a href="#">策划文案</a>
+							<a href="#">营销推广</a>
+							<a href="#">网站建设</a>
+							<a href="#">软件开发</a>
+							<a href="#">移动应用</a>
+							<a href="#">建筑设计</a>
+							<a href="#">工业设计</a>
+							<a href="#">翻译服务</a>
+							<a href="#">生活服务</a>
+							<a href="#">招聘找人</a>
+							<a href="#">多媒体制作</a>
+						</div>
+					</div>
+					<div id="left_down">
+						<div id="item_condition">
+							<ul>
+								<li><a href="#" class="item_condition_li1">所有店铺</a></li>
+								<li><a href="#" class="item_condition_li2">所有服务</a></li>
+							</ul>
+							<div id="capacity">
+								名称：<input type="text" name="name" class="capacity_input_name"/>&nbsp;￥<input type="text" name="price_start" class="capacity_input_price"/>至<input type="text" name="price_end" class="capacity_input_price"/>
+								<button class="capacity_button">搜索</button>
+								<div class="capacity_div">
+									<span class="capacity_span">筛选所在地</span>
+									<div class="capacity_div_div">
+										<table class="capacity_div_div_table">
+											<tr class="capacity_div_div_tr">
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">[全部]</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">北京</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">安徽</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">山东</a></td>
+											</tr>
+											<tr class="capacity_div_div_tr">
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">江苏</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">上海</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">广东</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">浙江</a></td>
+											</tr>
+											<tr class="capacity_div_div_tr">
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">福建</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">重庆</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">甘肃</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">广西</a></td>
+											</tr>
+											<tr class="capacity_div_div_tr">
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">贵州</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">海南</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">河北</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">河南</a></td>
+											</tr><tr class="capacity_div_div_tr">
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">黑龙江</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">湖北</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">湖南</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">江西</a></td>
+											</tr>
+											<tr class="capacity_div_div_tr">
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">吉林</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">辽宁</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">内蒙古</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">宁夏</a></td>
+											</tr>
+											<tr class="capacity_div_div_tr">
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">青海</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">山西</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">陕西</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">四川</a></td>
+											</tr>
+											<tr class="capacity_div_div_tr">
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">天津</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">新疆</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">西藏</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">云南</a></td>
+											</tr>
+											<tr class="capacity_div_div_tr">
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">香港</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">澳门</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">台湾</a></td>
+												<td class="capacity_div_div_td"><a href="#" class="capacity_div_div_table_a">国外与其他</a></td>
+											</tr>
+										</table>
+									</div>
+								</div>
+ 							</div>
+						</div>
+						<div id="item_sort">
+							<div id="container-1">
+								<span title="默认排序">排序方式</span>
+								<ul>
+									<li><a href="#fragment-1"><span>综合</span></a></li>
+									<li><a href="#fragment-1"><span>最新</span></a></li>
+									<li><a href="#fragment-1"><span>销量</span></a></li>
+									<li><a href="#fragment-1"><span>价格</span></a></li>
+								</ul>
+								<!-- 效果div 不能删 -->
+								<div id="fragment-1">
+								</div>
+								<!------------------>
+							</div>   
+						</div>
+						<!-- 左边头部结束 -->
+						<div id="item_detail">
+							<div id="promote_details">
+							<table class="promote_table" cellpadding="0" cellspacing="0">
+								<tr class="promote_tr">
+									<td class="promote_td">
+											<div class="promote_detail">
+												<div class="details_left">
+													<a href="#" class="details_left_a"><img src="../images/p32.png" /></a>
+													<a href="#" class="details_left_a1">LOGO设计/助跑企业腾飞</a>&nbsp;<span class="details_left_a_span">人气<span class="details_left_a_span_span">1000</span></span><br />
+													<span class="details_left_span1">平面设计 - LOGO设计</span><br />
+													<br /><br />
+													<a href="#" class="details_left_a2">龙博品牌设计</a>
+													<span class="details_left_span2">辽宁省 大连市</span>	
+												</div>
+												<div class="details_right">
+													<div class="details_right_left">
+														<span>￥500</span>
+													</div>
+													<div class="details_right_midden">
+														<span class="details_right_midden_text"> 成交数量:519</span><br />
+														<span class="details_right_midden_text"> 服务点评:464</span>
+													</div>
+													<div class="details_right_right">
+														<span class="details_right_right_div_span">100%</span><br />
+														<div class="details_right_right_div">
+															<span class="details_right_right_div_span">综合评分:4.98</span>
+															<div class="details_right_right_div_div">
+																<span class="details_right_right_div_div_span">方案创意:5</span><br />
+																<span class="details_right_right_div_div_span">服务态度:5</span><br />
+																<span class="details_right_right_div_div_span">工作效率:5</span><br />
+																<span class="details_right_right_div_div_span">完成质量:5</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+								  </td>
+							  </tr>
+						</table>
+				  </div>
+			  </div>
+		  </div>
+				<!-- 左边结束 -->	
+				<!-- 右边开始 -->
+				<div id="fitem_right">
+					<div id="fitem_right_first">
+						<div id="fitem_right_first_title" class="fitem_right_first_div">
+							<span>热门项目标签</span>
+						</div>
+						<div id="fitem_right_first_header" class="fitem_right_first_div">
+							<img src="../images/fitem_right_first_header.png" />
+						</div>
+						<div id="fitem_right_first_container" class="fitem_right_first_div">
+							<table cellpadding="0" cellspacing="0">
+								<tr>
+									<td id="td1"><span class="td_span1">品牌标志</span></td>
+									<td id="td2"><span class="td_span2">公司logo设计</span></td>
+								</tr>
+								<tr>
+									<td id="td3"><span class="td_span3">产品包装设计</span></td>
+									<td id="td4"><span class="td_span4">现代简约</span></td>
+								</tr>
+								<tr>
+									<td id="td5"><span class="td_span5">企业VI设计</span></td>
+									<td id="td6"><span class="td_span6">羊宝宝起名</span></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div id="fitem_right_second">
+						<button>马上发布需求</button>
+					</div>
+					<div id="fitem_right_third">
+						<div id="fitem_right_third_div1">
+							<span>推荐服务商</span>
+							<a href="#">更多>></a>
+						</div>
+						<div id="fitem_right_third_div2" class="third_div">
+							<div id="third_left1" class="third_left">
+								<img src="../images/biyunchuan.png" />							
+							</div>
+							<div id="third_right1" class="third_right_up">
+								<div class="third_name">
+									<a href="#" title="碧云川设计工作室">碧云川设计工作室</a>
+								</div>
+								<div class="guyong" title="立即雇佣威客">
+									<span>立即</span><br />
+									<span>雇佣</span>
+								</div>
+								<div class="third_grade"></div>
+							</div>
+							<div id="third_right2" class="third_right_down">
+								<span class="haopinglv">好评率：</span><span class="percent">95.2%</span><br />
+								<span class="speciality">擅长：</span><span class="skill"><a href="#">LOGO设计</a>&nbsp;<a href="#">VI设计</a></span>							
+							</div>
+						</div>
+						<div id="fitem_right_third_div3" class="third_div">
+							<div class="third_left">
+								<img src="../images/miaozi.png" />							
+							</div>
+							<div class="third_right_up">
+								<div class="third_name">
+									<a href="#" title="苗子设计工作室">苗子设计工作室</a>
+								</div>
+								<div class="guyong" title="立即雇佣威客">
+									<span>立即</span><br />
+									<span>雇佣</span>
+								</div>
+								<div class="third_grade"></div>
+							</div>
+							<div id="third_right2" class="third_right_down">
+								<span class="haopinglv">好评率：</span><span class="percent">100%</span><br />
+								<span class="speciality">擅长：</span><span class="skill"><a href="#">LOGO设计</a>&nbsp;<a href="#">VI设计</a></span>							
+							</div>
+						</div>
+						<div id="fitem_right_third_div4" class="third_div">
+							<div class="third_left">
+								<img src="../images/longbo.png" />							
+							</div>
+							<div class="third_right_up">
+								<div class="third_name">
+									<a href="#" title="龙博品牌设计">龙博品牌设计</a>
+								</div>
+								<div class="guyong" title="立即雇佣威客">
+									<span>立即</span><br />
+									<span>雇佣</span>
+								</div>
+								<div class="third_grade"></div>
+							</div>
+							<div id="third_right2" class="third_right_down">
+								<span class="haopinglv">好评率：</span><span class="percent">100%</span><br />
+								<span class="speciality">擅长：</span><span class="skill"><a href="#">LOGO设计</a>&nbsp;<a href="#">VI设计</a></span>							
+							</div>
+						</div>
+					</div>
+					<div id="fitem_right_4th">
+						<div id="fourth_div1">
+							<span>成功案例</span>
+							<a href="#">更多>></a>
+						</div>
+						<div id="fourth_div2" class="fourth_div">
+							<a class="imga" href="#"><img src="../images/fangbei.png" /></a>
+							<div class="describe">
+								<div class="describe1">
+									<span class="describe_span">服务商:<a href="#">龙博品牌设计</a></span><br />
+									<span class="describe_span">成交价:<span class="price_span" style="color:#ff9000;">￥988元</span></span>
+								</div>
+								<div class="describe2">
+									<button>雇佣TA</button>
+								</div>
+								
+							</div>
+						</div>
+						<div id="fourth_div3" class="fourth_adiv">
+							<a href="#" class="fourth_a">方贝网LOGO设计</a>
+						</div>
+						<div id="fourth_div4" class="fourth_div">
+							<a class="imga" href="#"><img src="../images/chayin.png" /></a>
+						</div>
+						<div id="fourth_div5" class="fourth_adiv">
+							<a href="#" class="fourth_a">都市白领茶饮LOGO设计</a>
+						</div>
+						<div id="fourth_div6" class="fourth_div">
+							<a class="imga" href="#"><img src="../images/qinzi.png" /></a>
+						</div>
+						<div id="fourth_div7" class="fourth_adiv">
+							<a href="#" class="fourth_a">亲子教材包装设计</a>
+						</div>
+					</div>
+					<div id="fitem_right_5th">
+						<div id="fiveth_div1">
+							<span>推荐攻略</span>
+							<a href="#">更多>></a>
+						</div>
+						<div id="fiveth_div2" class="fiveth_div">
+							<div class="fiveth_div2_left">
+								<img src="../images/c.png" />
+							</div>
+							<div class="fiveth_div2_right">
+								<a href="#" class="ah1">柳青、柳甄 “天才”姐妹的进阶</a>
+								<a href="#" class="ah2">软件开发</a>
+							</div>
+						</div>
+						<div id="fiveth_div3" class="fiveth_div">
+							<div class="fiveth_div2_left">
+								<img src="../images/c.png" />
+							</div>
+							<div class="fiveth_div2_right">
+								<a href="#" class="ah1">柳青、柳甄 “天才”姐妹的进阶</a>
+								<a href="#" class="ah2">软件开发</a>
+							</div>
+						</div>
+						<div id="fiveth_div4" class="fiveth_div">
+							<div class="fiveth_div2_left">
+								<img src="../images/c.png" />
+							</div>
+							<div class="fiveth_div2_right">
+								<a href="#" class="ah1">柳青、柳甄 “天才”姐妹的进阶</a>
+								<a href="#" class="ah2">软件开发</a>
+							</div>
+						</div>
+						<div id="fiveth_div5" class="fiveth_div">
+							<div class="fiveth_div2_left">
+								<img src="../images/c.png" />
+							</div>
+							<div class="fiveth_div2_right">
+								<a href="#" class="ah1">柳青、柳甄 “天才”姐妹的进阶</a>
+								<a href="#" class="ah2">软件开发</a>
+							</div>
+						</div>
+						<div id="fiveth_div6" class="fiveth_div">
+							<div class="fiveth_div2_left">
+								<img src="../images/c.png" />
+							</div>
+							<div class="fiveth_div2_right">
+								<a href="#" class="ah1">柳青、柳甄 “天才”姐妹的进阶</a>
+								<a href="#" class="ah2">软件开发</a>
+							</div>
+						</div>
+						<div id="fiveth_div7" class="fiveth_div">
+							<div class="fiveth_div2_left">
+								<img src="../images/c.png" />
+							</div>
+							<div class="fiveth_div2_right">
+								<a href="#" class="ah1">柳青、柳甄 “天才”姐妹的进阶</a>
+								<a href="#" class="ah2">软件开发</a>
+							</div>
+						</div>
+					</div>
+					<div id="fitem_right_6th">
+						<div id="sixth_div1">
+							<span>创意问答</span>
+							<a href="#">更多>></a>
+						</div>
+						<div id="sixth_div2" class="sixth_div">
+							<p><a href="#" title="怎么查看雇主信息，比如手机号什么的，感觉被骗了。">怎么查看雇主信息，比如手机号什么的，感觉被骗了。</a></p>
+						</div>
+						<div id="sixth_div3" class="sixth_div">
+							<p><a href="#" title="我已经中标，，任务也已经圆满结束，为什么佣金还没到账。">我已经中标，，任务也已经圆满结束，为什么佣金还没到账。</a></p>
+						</div>
+						<div id="sixth_div4" class="sixth_div">
+							<p><a href="#" title="为什么用微波炉打饭，饭盒里面的饭还是冷的？">为什么用微波炉打饭，饭盒里面的饭还是冷的？</a></p>
+						</div>
+						<div id="sixth_div5" class="sixth_div">
+							<p><a href="#" title="父亲欠债，还不起，会牵扯子女去还吗？">父亲欠债，还不起，会牵扯子女去还吗？</a></p>
+						</div>
+						<div id="sixth_div6" class="sixth_div">
+							<p><a href="#" title="天气热了，办公室有的同事不吹空调，有的要吹空调？">天气热了，办公室有的同事不吹空调，有的要吹空调？</a></p>
+						</div>
+						<div id="sixth_div7" class="sixth_div">
+							<p><a href="#" title="不需要光合作用的植物有哪些？">不需要光合作用的植物有哪些？</a></p>
+						</div>
+					</div>
+				</div>
+				<!-- 右边结束 -->
+			</div>
+	</div>
+	<!-- 网页主要内容结束 -->
+	<!-- 底部 -->
+	<footer>
+		<ul>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">工具</a></li>
+			<li><a href="#">规则</a></li>
+			<li><a href="#">新手入门</a></li>
+			<li><a href="#">快速导航</a></li>
+		</ul>
+	</footer>
+	<!-- 底部结束 -->
+</body>
+</html>
