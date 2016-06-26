@@ -1,0 +1,526 @@
+/* CSS Document */
+/*内容主体*/
+#main{
+	width:auto;
+	height:auto;
+}
+/**************/
+/*进度条*/
+#conditon{
+	width:1002px;
+	height:50px;
+	margin-left:200px;
+	margin-top:30px;
+}
+.conditon_div1{
+	width:174px;
+	height:50px;
+	float:left;
+	text-align:center;
+	font-family:"宋体";
+	font-size:14px;
+	line-height:50px;
+	font-weight:bold;
+}
+.conditon_div2{
+	width:33px;
+	height:50px;
+	float:left;
+}
+.now{
+	background-color:#0dad51;
+}
+.late{
+	background-color:#fce6c7;
+}
+.now_color{
+	color:#fff;
+}
+.late_color{
+	color:#4d4d4d;
+}
+/**************************/
+/*发布需求*/
+.push_message{
+	width:1002px;
+	height:1300px;
+	background-color:#fff;
+	margin-left:200px;
+	margin-top:20px;
+	border:1px solid #e0e0e0;
+}
+.require_type_title{
+	display:inline-block;
+	width:90%;
+	height:25px;
+	margin-left:30px;
+	margin-top:40px;
+}
+.require_type_title_span{
+	color:#333333;
+	font-family:"宋体";
+	font-size:18px;
+	font-weight:bold;
+}
+.require_type{
+	width:90%;
+	height:30px;
+	margin-left:30px;
+	margin-top:5px;
+}
+.require_type_button{
+	width:80px;
+	height:30px;
+	border:1px solid #e8e8e8;
+	outline:none;
+	margin-left:10px;
+	color:#6f6d6d;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	background-color:#f4f4f4;
+	text-align:center;
+}
+.require_type_button:hover{
+	background-color:#ff6600;
+	color:#fff;
+}
+.require_details_title{
+	display:inline-block;
+	width:90%;
+	height:25px;
+	margin-left:30px;
+	margin-top:40px;
+}
+.require_details_title_span{
+	color:#333333;
+	font-family:"宋体";
+	font-size:18px;
+	font-weight:bold;
+}
+.require_details_title_a1{
+	margin-left:40px;
+	text-decoration:none;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#838383;
+}
+.require_details_title_a1:hover{
+	color:#0dad51;
+}
+.require_details_title_a2{
+	margin-left:20px;
+	text-decoration:none;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#ff0000;
+}
+.require_details_content{
+	margin-left:30px;
+	margin-top:5px;
+	width:95%;
+	height:43px;
+}
+.profile{
+	width:500px;
+	height:43px;
+	float:left;
+}
+.profile_input{
+	width:100%;
+	height:36px;
+	-moz-box-shadow:2px 2px 10px #06c;
+    -webkit-box-shadow:2px 2px 10px #06c;
+    box-shadow:2px 2px 10px #06c;
+	font-family:"宋体";
+	font-size:16px;
+}
+.push_type1{
+	margin-left:40px;
+	width:146px;
+	height:40px;
+	float:left;
+	background-color:#0dad51;
+	border-bottom:1px solid #049e45;
+	border-left:1px solid #049e45;
+	border-top:1px solid #049e45;
+	text-align:center;
+	cursor:pointer;
+	color:#fff;
+}
+.push_type_yes{
+	display:inline;
+}
+.push_type_no{
+	display:none;
+}
+.push_type_model{
+	font-size:12px;
+	font-family:"宋体";
+	font-weight:bold;
+	line-height:22px;
+}
+.push_type_model_details{
+	font-size:12px;
+	font-family:"宋体";
+}
+.link_img{
+	width:29px;
+	height:42px;
+	float:left;
+	background-image:url(../images/fb_sel_xs_curr.jpg);
+}
+.push_type2{
+	width:146px;
+	height:40px;
+	float:left;
+	background-color:#e2e2e2;
+	border-bottom:1px solid #d1d1d1;
+	border-top:1px solid #d1d1d1;
+	border-right:1px solid #d1d1d1;
+	text-align:center;
+	cursor:pointer;
+	color:#424242;
+}
+/*文本编辑器*/
+section {
+	width: 90%;
+    text-align: left;
+	margin-left:30px;
+	margin-top:20px;
+}
+.appendix{
+	width:95%;
+	height:200px;
+	border:1px solid red;
+	margin-left:30px;
+	margin-top:20px;
+}
+.contact{
+	width:100%;
+	height:200px;
+}
+.contact_title{
+	display:inline-block;
+	width:90%;
+	height:25px;
+	margin-left:30px;
+	margin-top:40px;
+}
+.contact_title_span{
+	color:#333333;
+	font-family:"宋体";
+	font-size:18px;
+	font-weight:bold;
+}
+.contact_info{
+	width:100%;
+	height:40px;
+	margin-left:40px;
+	font-weight:bold;
+	color:#0dad51;
+	font-size:18px;
+	font-family:Arial, Helvetica, sans-serif;
+	line-height:35px;
+	margin-top:10px;
+}
+.contact_input{
+	height:25px;
+}
+.phont_span{
+	font-size:14px;
+	color:#ff0000;
+	line-height:35px;
+}
+.expect{
+	width:60%;
+	height:300px;
+	border:1px solid #e2e1e1;
+	margin-left:100px;
+	background-color:#f8f8f8;
+}
+.money_title{
+	display:inline-block;
+	width:90%;
+	height:25px;
+	margin-left:30px;
+	margin-top:40px;
+}
+.expect_span{
+	color:#333333;
+	font-family:"宋体";
+	font-size:14px;
+	font-weight:bold;
+}
+.money_input{
+	margin-left:30px;
+	height:25px;
+}
+.time_title{
+	display:inline-block;
+	width:90%;
+	height:25px;
+	margin-left:30px;
+	margin-top:20px;
+}
+.time{
+	margin-left:30px;
+	font-size:14px;
+}
+.time_span1{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+.time_input{
+	height:25px;
+	width:80px;
+}
+.time_span2{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+	color:#999999;
+}
+.split_title{
+	display:inline-block;
+	width:90%;
+	height:25px;
+	margin-left:30px;
+	margin-top:20px;
+}
+.split_select{
+	width:150px;
+	height:25px;
+	margin-left:30px;
+	margin-top:10px;
+}
+.promise_title{
+	width:95%;
+	height:30px;
+	margin-left:30px;
+	margin-top:40px;
+}
+.promise_title_span{
+	font-family:"宋体";
+	font-size:14px;
+	font-weight:bold;
+	color:#333333;
+}
+.promise{
+	width:95%;
+	height:30px;
+	margin-left:30px;
+}
+.promise_span{
+	font-size:14px;
+	font-family:"宋体";
+	color:#ff0000;
+	line-height:20px;
+}
+.promise_a{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+.promise_footer{
+	width:95%;
+	height:30px;
+	margin-left:30px;
+}
+.promise_footer_span{
+	font-family:"宋体";
+	font-size:12px;
+	color:#666666;
+}
+/****************************************/
+/*额外的需求*/
+.request_add{
+	width:1002px;
+	height:auto;
+	background-color:#fff;
+	margin-left:200px;
+	margin-top:20px;
+	border:1px solid #e0e0e0;
+}
+.request_add_title{
+	margin-left:30px;
+	width:95%;
+	height:30px;
+	margin-top:20px;
+}
+.request_add_title_span{
+	color:#515151;
+	font-family:"宋体";
+	font-size:16px;
+	font-weight:bold;
+}
+.request_add_table{
+	width:95%;
+	height:auto;
+	margin-left:30px;
+	margin-top:20px;
+	margin-bottom:20px;
+}
+.request_add_table table{
+	border-collapse:collapse;
+	border-spacing:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:14px;
+}
+.request_add_table table tr{
+	height:80px;
+	border:1px solid #dddddd;
+}
+.request_add_td1{
+	width:150px;
+	border:1px solid #dddddd;
+	text-align:center;
+	color:#525151;
+}
+.request_add_td2{
+	width:300px;
+	border:1px solid #dddddd;
+	text-align:left;
+	padding:10px;
+	line-height:20px;
+	color:#525151;
+}
+.request_add_td3{
+	width:100px;
+	border:1px solid #dddddd;
+	text-align:center;
+	color:#525151;
+}
+.request_add_td4{
+	width:200px;
+	border:1px solid #dddddd;
+	text-align:left;
+	color:#525151;
+	padding-left:20px;
+}
+.quantity{
+	width:50px;
+	height:15px;
+}
+.add{
+	margin-left:10px;
+}
+.sub{
+	margin-left:10px;
+}
+#invoice_details{
+	display:none;
+	width:600px;
+	height:230px;
+	margin-top:10px;
+	border:1px solid #f5daba;
+	margin-left:200px;
+	border-radius:5px;
+}
+.invoice_details_span{
+	display:inline-block;
+	margin-left:150px;
+	margin-top:10px;
+	color:#333333;
+	font-family:"宋体";
+	font-size:14px;
+}
+.invoice_details_remark{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#999999;
+	margin-left:10px;
+}
+/******************************************/
+/*结算*/
+.summary{
+	width:1002px;
+	height:250px;
+	background-color:#fff;
+	margin-left:200px;
+	margin-top:20px;
+	border:1px solid #e0e0e0;
+}
+.summary_title{
+	margin-left:30px;
+	width:95%;
+	height:30px;
+	margin-top:20px;
+}
+.summary_title_span{
+	color:#515151;
+	font-family:"宋体";
+	font-size:16px;
+	font-weight:bold;
+}
+.money_details{
+	margin-left:50px;
+	width:95%;
+	height:30px;
+	margin-top:20px;
+}
+.money_summary{
+	margin-left:50px;
+	width:95%;
+	height:30px;
+}
+.agree_ragular{
+	margin-left:50px;
+	width:95%;
+	height:30px;
+	margin-top:20px;
+}
+.agree_regular_input{
+	cursor:pointer;
+}
+.argee_regular_a{
+	font-family:"宋体";
+	font-size:14px;
+	text-decoration:none;
+	color:#333333;
+}
+.argee_regular_a:hover{
+	color:#ff6600;
+}
+.submit{
+	margin-left:50px;
+	width:95%;
+	height:30px;
+	margin-top:10px;
+}
+.submit_button{
+	width:130px;
+	height:40px;
+	outline:none;
+	border:1px solid #f7f7f7;
+	background-color:#ff6600;
+	color:#fff;
+	text-align:center;
+	font-family:"宋体";
+	font-size:16px;
+	font-weight:bold;
+}
+.submit_button:hover{
+	background-color:#ff5308;
+}
+/*管理结算清单*/
+.money_details_span{
+	display:none;
+}
+.money_span{
+	font-weight:bold;
+	color:#ff0000;
+	display:none;
+	font-family:Arial, Helvetica, sans-serif;
+}
+#money_details_give{
+	display:inline;
+}
+#give_money{
+	display:inline;
+}
+.money_summary_span2{
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:20px;
+	color:#ff0000;
+	font-weight:bold;
+}
+/**************/
+/******************************************/

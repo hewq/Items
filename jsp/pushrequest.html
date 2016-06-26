@@ -1,0 +1,522 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>发布需求</title>
+<link rel="stylesheet" href="../css/index.css"/>
+<link rel="stylesheet" href="../css/pushrequest.css" />
+<link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="../css/froala_editor.min.css" rel="stylesheet" type="text/css">
+<!--文本编辑器-->
+<script src="../js/libs/jquery-1.11.1.min.js"></script>
+<script src="../js/froala_editor.min.js"></script>
+<script src="../js/plugins/tables.min.js"></script>
+<script src="../js/plugins/lists.min.js"></script>
+<script src="../js/plugins/colors.min.js"></script>
+<script src="../js/plugins/media_manager.min.js"></script>
+<script src="../js/plugins/font_family.min.js"></script>
+<script src="../js/plugins/font_size.min.js"></script>
+<script src="../js/plugins/block_styles.min.js"></script>
+<script src="../js/plugins/video.min.js"></script>
+<!----------------------------------------------------->
+<script type="text/javascript">
+	$(function(){
+		/*文本编辑器*/
+		$('#edit').editable({inlineMode: false, alwaysBlank: true});
+		/*悬赏模式/招标模式替换*/
+		$("#push_type2").click(function(){
+			$("#push_type1").css({background:'#e2e2e2',
+						'border-bottom':'1px solid #d1d1d1',
+						'border-top':'1px solid #d1d1d1',
+						'border-left':'1px solid #d1d1d1',
+						color:'#424242',
+						});
+			$(".link_img").css("background-image","url(../images/fb_sel_zb_curr.jpg)");
+			$(this).css({
+						'background-color':'#0dad51',
+						'border-bottom':'1px solid #049e45',
+						'border-right':'1px solid #049e45',
+						'border-top':'1px solid #049e45',
+						color:'#fff',
+						});
+			$("#push_type_img2").attr("class","push_type_yes");
+			$("#push_type_img1").attr("class","push_type_no");
+			$("#push_type_input").val("zhaobiao");
+		});
+		$("#push_type1").click(function(){
+			$("#push_type2").css({background:'#e2e2e2',
+						'border-bottom':'1px solid #d1d1d1',
+						'border-top':'1px solid #d1d1d1',
+						'border-right':'1px solid #d1d1d1',
+						color:'#424242',
+						});
+			$(".link_img").css("background-image","url(../images/fb_sel_xs_curr.jpg)");
+			$(this).css({
+						'background-color':'#0dad51',
+						'border-bottom':'1px solid #049e45',
+						'border-left':'1px solid #049e45',
+						'border-top':'1px solid #049e45',
+						color:'#fff',
+						});
+			$("#push_type_img1").attr("class","push_type_yes");
+			$("#push_type_img2").attr("class","push_type_no");
+			$("#push_type_input").val("xuanshang");
+		});
+		/*设置table背景色*/
+		$(".request_add_table table tr:even").css("background","#fdf3e7");
+		$(".request_add_table table tr:odd").css("background","#f9f9f9");
+		/***************/
+		/*点击按钮增减数量*/
+		/*+1*/
+		$(".add").click(function(){
+			var current = parseInt($(this).prev().val());
+			current = current + 1;
+			$(this).prev().val(current);
+		});
+		/*-1*/
+		$(".sub").click(function(){
+			var current = parseInt($(this).prev().prev().val());
+			if(current == 0){
+				$(this).prev().prev().val(current);
+			}else{
+				current = current - 1;
+				$(this).prev().prev().val(current);
+			}
+		});
+		/***************/
+		/*结算清单管理*/
+			$(".money_input").blur(function(){
+				var give_money = $(".money_input").val();
+				if(give_money == null || give_money == ""){
+					$("#give_money").html("￥0");
+				}else{
+					$("#give_money").html("￥"+give_money);
+				}
+				
+				sum();
+			});
+			$("#urgent_card_add").click(function(){
+				var quantity = parseInt($("#urgent_card_howmuch").val());
+				var money = quantity * 50;
+				$("#urgent_card_money").html("￥"+money);
+				$("#money_details_urgent_card").show();
+				$("#urgent_card_money").show();
+				
+				sum();
+			});
+			$("#urgent_card_sub").click(function(){
+				var quantity = parseInt($("#urgent_card_howmuch").val());
+				var money = quantity * 50;
+				if(quantity == 0){
+					$("#urgent_card_money").html("￥"+money);
+					$("#money_details_urgent_card").hide();
+					$("#urgent_card_money").hide();
+				}else{
+					$("#urgent_card_money").html("￥"+money);
+					$("#money_details_urgent_card").show();
+					$("#urgent_card_money").show();
+				}
+				
+				sum();
+			});
+			
+			$("#top_card_add").click(function(){
+				var quantity = parseInt($("#top_card_howmuch").val());
+				var money = quantity * 50;
+				$("#top_card_money").html("￥"+money);
+				$("#money_details_top_card").show();
+				$("#top_card_money").show();
+				
+				sum();
+			});
+			$("#top_card_sub").click(function(){
+				var quantity = parseInt($("#top_card_howmuch").val());
+				var money = quantity * 50;
+				if(quantity == 0){
+					$("#top_card_money").html("￥"+money);
+					$("#money_details_top_card").hide();
+					$("#top_card_money").hide();
+				}else{
+					$("#top_card_money").html("￥"+money);
+					$("#money_details_top_card").show();
+					$("#top_card_money").show();
+				}
+				
+				sum();
+			});
+			
+			$("#height_card_add").click(function(){
+				var quantity = parseInt($("#height_card_howmuch").val());
+				var money = quantity * 50;
+				$("#height_card_money").html("￥"+money);
+				$("#money_details_height_card").show();
+				$("#height_card_money").show();
+				
+				sum();
+			});
+			$("#height_card_sub").click(function(){
+				var quantity = parseInt($("#height_card_howmuch").val());
+				var money = quantity * 50;
+				if(quantity == 0){
+					$("#height_card_money").html("￥"+money);
+					$("#money_details_height_card").hide();
+					$("#height_card_money").hide();
+				}else{
+					$("#height_card_money").html("￥"+money);
+					$("#money_details_height_card").show();
+					$("#height_card_money").show();
+				}
+				
+				sum();
+			});
+			
+			var mark = $("input[name='function']:checked").val();
+			$("input[name='function']").click(function(){
+				// 这里需要更新
+				mark = $(this).val();
+				
+				if($("input[name='function']:checked").val()=="1"){
+					$("#baidu_money").html("￥50");
+					$("#money_details_baidu").show();
+					$("#baidu_money").show();
+				}else{
+					$("#baidu_money").html("￥0");
+					$("#money_details_baidu").hide();
+					$("#baidu_money").hide();
+				}
+				
+				sum();
+			});
+			$("input[name='invoice']").click(function(){
+				if($("input[name='invoice']:checked").val()=="1"){
+					$("#invoice_details").show();
+					var give_money = $(".money_input").val();
+					$("#money_details_invoice").show();
+					$("#invoice_money").show();
+					$("#invoice_money").html("￥" + give_money * 0.08);
+				}else if($("input[name='invoice']:checked").val()=="2"){
+					$("#invoice_details").show();
+					var give_money = $(".money_input").val();
+					if(give_money < 500){
+					$("#money_details_invoice").show();
+					$("#invoice_money").show();
+					$("#invoice_money").html("￥10");
+					}else{
+						$("#money_details_invoice").hide();
+						$("#invoice_money").hide();
+						$("#invoice_money").html("￥0");
+					}
+				}else{
+					$("#money_details_invoice").show();
+					$("#invoice_money").show();
+					$("#invoice_money").html("￥0");
+					$("#invoice_details").hide();
+				}
+				
+				sum();
+			});
+			/*总金额*/
+			function sum(){
+				/*总金额*/
+				/*托管赏金*/
+				var give_money = parseInt($("#give_money").html().split("￥")[1]);
+				/*开具发票*/
+				var invoice_money = parseInt($("#invoice_money").html().split("￥")[1]);
+				/*项目加急卡*/
+				var urgent_card_money = parseInt($("#urgent_card_money").html().split("￥")[1]);
+				/*项目置顶卡*/
+				var top_card_money = parseInt($("#top_card_money").html().split("￥")[1]);
+				/*排名提升卡*/
+				var height_card_money = parseInt($("#height_card_money").html().split("￥")[1]);
+				/*屏蔽百度收录*/
+				var baidu_money = parseInt($("#baidu_money").html().split("￥")[1]);
+				
+				var sum = give_money + invoice_money + urgent_card_money + top_card_money + height_card_money + baidu_money;
+					
+				$(".money_summary_span2").html("￥"+sum);
+			}
+		/************/
+	});
+</script>
+</head>
+
+<body>
+	<!-- 导航条 -->
+	<header>
+		<ul>
+			<li><a href="#">首页</a><span>|</span></li>
+			<li>
+				<a href="#">服务内容</a>
+				<ul >
+					<li><a href="#">找项目</a></li>
+					<li><a href="#">找研发人员</a></li>
+					<li><a href="#">咨询服务</a></li>
+					<li><a href="#">悬赏大厅</a></li>
+					<li><a href="#">发布要求</a></li>
+					<li><a href="#">项目匹配</a></li>
+					<li><a href="#">人才培养</a></li>
+					<li><a href="#">高成工厂</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li>
+				<a href="#">担保评估</a>
+				<ul>
+					<li><a href="#">重大开发项目</a></li>
+					<li><a href="#">成果转化</a></li>
+					<li><a href="#">担保评价</a></li>
+					<li><a href="#">投资体系</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li>
+				<a href="#">发布信息</a>
+				<ul>
+					<li><a href="#">活动组织</a></li>
+					<li><a href="#">数据信息</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li><a href="#">报道</a><span>|</span></li>
+			<li>
+				<a href="#">信息提交</a>
+				<ul>
+					<li><a href="#">需求提交</a></li>
+					<li><a href="#">成果提交</a></li>
+					<li><a href="#">评审提交</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li><a href="#">外包服务</a><span>|</span></li>
+			<li><a href="#">知识产权</a><span>|</span></li>
+			<li><a href="#">检验检测</a></li>
+		</ul>
+		<div id="header_adiv">
+			<a href="#" class="header_a">登录</a>
+			<a href="#" class="header_a">注册</a>
+		</div>
+	</header>
+	<!-- 导航条结束 -->
+	<!-- 网页主要内容 -->
+	<div id="main">
+		<!--进度-->
+		<div id="conditon">
+			<div class="conditon_div1 now now_color">
+				发布需求
+			</div>
+			<div class="conditon_div2">
+				<img src="../images/fabu_step_one.jpg" />
+			</div>
+			<div class="conditon_div1 late late_color">
+				报名交稿
+			</div>
+			<div class="conditon_div2">
+				<img src="../images/fabu_step_usu.jpg" />
+			</div>
+			<div class="conditon_div1 late late_color">
+				雇主选稿
+			</div>
+			<div class="conditon_div2">
+				<img src="../images/fabu_step_usu.jpg" />
+			</div>
+			<div class="conditon_div1 late late_color">
+				中标公示
+			</div>
+			<div class="conditon_div2">
+				<img src="../images/fabu_step_usu.jpg" />
+			</div>
+			<div class="conditon_div1 late late_color">
+				验收付款
+			</div>
+		</div>
+		<!-- 提交表单 -->
+		<form method="post" action="#">
+			<!--发布的内容-->
+			<div class="push_message">
+				<div class="require_type_title">
+					<span class="require_type_title_span">需求类别</span>
+				</div>
+				<div class="require_type">
+					<button type="button" class="require_type_button">产品需求</button>
+					<button type="button" class="require_type_button">咨询服务</button>
+					<button type="button" class="require_type_button">微咨询</button>
+				</div>
+				<div class="require_details_title">
+					<span class="require_details_title_span">明确需求标题和详情</span>
+					<a href="#" class="require_details_title_a1">参照发布实例</a>
+					<a href="#" class="require_details_title_a2">转发精品项目</a>
+				</div>
+				<div class="require_details_content">
+					<div class="profile">
+						<input type="text" class="profile_input" name="profile" placeholder="用一句话概括您要做什么？" />
+					</div>
+					<div id="push_type1" class="push_type1" title="适合范围：&#13;LOGO设计">	
+						<span class="push_type_model"><img id="push_type_img1" class="push_type_yes" src="../images/yes.png" />悬赏模式</span><br />
+						<span class="push_type_model_details">威客先做方案，再选择中标</span>
+					</div>
+					<div class="link_img">
+						
+					</div>
+					<div id="push_type2" class="push_type2" title="适合范围：&#13;LOGO设计">
+						<span class="push_type_model"><img id="push_type_img2" class="push_type_no" src="../images/yes.png" />招标模式</span><br />
+						<span class="push_type_model_details">免费发布，先找人后托管</span>
+					</div>
+					<!-- 隐藏输入框，用于确定是悬赏模式还是招标模式 -->
+					<input id="push_type_input" type="hidden" name="push_type" value="xuanshang" />
+				</div>
+				<section id="editor">
+					<div id="edit"></div>
+				</section>
+				<div class="appendix"></div>
+				<div class="contact">
+					<div class="contact_title">
+						<span class="contact_title_span">留下您的手机号码，以便更好地为您服务</span>
+					</div>
+					<div class="contact_info">
+						PHONT <input class="contact_input" type="text" name="phontnum" pattern="[0-9]{11}" required />&nbsp;<span class="phont_span">*必填</span><br />
+						QQ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="contact_input" type="text" name="phontnum" />
+					</div>
+				</div>
+				<div class="expect">
+					<div class="money_title">
+						<span class="expect_span">您打算支付多少赏金呢？</span>
+					</div>
+					<div class="money">
+						<input class="money_input" type="text" name="money" pattern="^[1-9][0-9]{0,}" />
+					</div>
+					<div class="time_title">
+						<span class="expect_span">您希望多久完成？</span>
+					</div>
+					<div class="time">
+						<span class="time_span1">完成周期</span>&nbsp;<input class="time_input" type="text" name="time" /> 天&nbsp;<span class="time_span2">最多30天</span>
+					</div>
+					<div class="split_title">
+						<span class="expect_span">赏金怎么分配呢？</span>
+					</div>
+					<div class="split">
+						<select class="split_select">
+							<option value="只选一人中标" selected="selected">只选一人中标</option>
+							<option value="选中多人中标">选中多人中标</option>
+							<option value="计件算酬劳，合格一个算一个">计件算酬劳，合格一个算一个</option>
+						</select>
+					</div>
+				</div>
+				<div class="promise_title">
+					<span class="promise_title_span">项目结束后是否承诺选稿？</span>
+				</div>
+				<div class="promise">
+					<input type="checkbox" name="promise" /><span class="promise_span">我承诺项目结束后一定选择方案。</span>
+					<a href="#" class="promise_a">什么是承诺保证选稿？</a>
+				</div>
+				<div class="promise_footer">
+					<span class="promise_footer_span">承诺了保证选稿的项目，通常会有较多的威客参与项目，参与量会更多，威客会更放心参与这类项目。</span>
+				</div>
+			</div>
+			<!--额外需求-->
+			<div class="request_add">
+				<div class="request_add_title">
+					<span class="request_add_title_span">您可能还需要</span>
+				</div>
+				<div class="request_add_table">
+					<table>
+						<tr>
+							<td class="request_add_td1">项目加急卡24小时</td>
+							<td class="request_add_td2">
+								使用该道具可将项目展示在首页项目加急处显示，同时也在悬赏大厅显示，持续24小时(使用时间不可叠加)。96.3%的周期紧急的客户使用该卡。
+							</td>
+							<td class="request_add_td3">单价：50元</td>
+							<td class="request_add_td4">购买数量:<input id="urgent_card_howmuch" class="quantity" type="text" name="urgent_card" value="0" /><button id="urgent_card_add" type="button" class="add">+</button><button id="urgent_card_sub" type="button" class="sub">一</button></td>
+						</tr>
+						<tr>
+							<td class="request_add_td1">项目置顶卡24小时</td>
+							<td class="request_add_td2">
+								使用该卡可以将您已经成功发布的项目在页面置顶保持24小时（使用时间不可叠加)。
+							</td>
+							<td class="request_add_td3">单价：20元</td>
+							<td class="request_add_td4">购买数量:<input id="top_card_howmuch" class="quantity" type="text" name="urgent_card" value="0" /><button id="top_card_add" type="button" class="add">+</button><button id="top_card_sub" type="button" class="sub">一</button></td>
+						</tr>
+						<tr>
+							<td class="request_add_td1">排名提升卡</td>
+							<td class="request_add_td2">使用该卡可以更新项目操作时间，让你的项目排名一次性提升到最前面。</td>
+							<td class="request_add_td3">单价：10元</td>
+							<td class="request_add_td4">购买数量:<input id="height_card_howmuch" class="quantity" type="text" name="urgent_card" value="0" /><button id="height_card_add" type="button" class="add">+</button><button id="height_card_sub" type="button" class="sub">一</button></td>
+						</tr>
+						<tr>
+							<td class="request_add_td1">屏蔽百度收录</td>
+							<td class="request_add_td2">开启此功能，百度将不会快照该项目信息，从而使得在百度搜索不到该项目信息。有效避免部分企业信息尴尬局面。</td>
+							<td class="request_add_td3">价格：50元</td>
+							<td class="request_add_td4">
+								<input type="radio" name="function" value="1"/>开启此功能<br />
+								<input type="radio" name="function" value="0" checked="checked" />不需要开启此功能
+							</td>
+						</tr>
+						<tr>
+							<td class="request_add_td1">开具发票</td>
+							<td class="request_add_td2">
+								开具发票相关费用为赏金的8%，雇主可选择自己承担或威客承担悬赏金额在500元以下、非悬赏项目，雇主需承担邮寄费用。
+							</td>
+							<td class="request_add_td3">
+								注：计件项目不能开具发票
+							</td>
+							<td class="request_add_td4">
+								<input type="radio" name="invoice" value="1" />雇主承担发票相关费用<br />
+								<input type="radio" name="invoice" value="2" />威客承担发票相关费用<br />
+								<input type="radio" name="invoice" value="0" checked="checked" />不需要开具发票
+ 							</td>
+						</tr>
+					</table>
+					<div id="invoice_details">
+						<span class="invoice_details_span">发票抬头:</span>
+						<input type="text" name="invoice_title" /><br />
+						<span class="invoice_details_span">发票内容:网络服务费</span><br />
+						<span class="invoice_details_span">发票邮寄信息</span><br />
+						<span class="invoice_details_span">收件人:</span>
+						<input type="text" name="invoice_username" /><span class="invoice_details_remark">收件人姓名</span><br />
+						<span class="invoice_details_span">收件地址:</span>
+						<input type="text" name="invoice_useraddr" /><br />
+						<span class="invoice_details_span">邮政编码:</span>
+						<input type="text" name="invoice_postcode" /><br />
+						<span class="invoice_details_span">联系电话:</span>
+						<input type="text" name="invoice_phone" /><br />
+					</div>
+				</div>
+			</div>
+			<!-- 结算 -->
+			<div class="summary">
+				<div class="summary_title">
+					<span class="summary_title_span">结算清单</span>
+				</div>
+				<div class="money_details">
+					<span value="55" id="money_details_give" class="money_details_span">托管赏金:</span><span id="give_money" class="money_span">￥0</span>
+					<span id="money_details_invoice" class="money_details_span">+ 开具发票:</span><span id="invoice_money" class="money_span">￥0</span>
+					<span id="money_details_urgent_card" class="money_details_span">+ 项目加急卡:</span><span id="urgent_card_money" class="money_span">￥0</span>
+					<span id="money_details_top_card" class="money_details_span">+ 项目置顶卡:</span><span id="top_card_money" class="money_span">￥0</span>
+					<span id="money_details_height_card" class="money_details_span">+ 排名提升卡:</span><span id="height_card_money" class="money_span">￥0</span>
+					<span id="money_details_baidu" class="money_details_span">+ 屏蔽百度收录:</span><span id="baidu_money" class="money_span">￥0</span>
+				</div>
+				<div class="money_summary">
+					<span class="money_summary_span">应付金额:</span><span class="money_summary_span2">￥0</span>
+				</div>
+				<div class="agree_ragular">
+					<input class="agree_regular_input" type="checkbox" /><span class="argee_regular_span">同意</span> <a href="#" class="argee_regular_a">《时间财富网项目发布规则》</a>
+				</div>
+				<div class="submit">
+					<button class="submit_button" type="submit">发布任务</button>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- 网页主要内容结束 -->
+	<!-- 底部 -->
+	<footer>
+		<ul>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">工具</a></li>
+			<li><a href="#">规则</a></li>
+			<li><a href="#">新手入门</a></li>
+			<li><a href="#">快速导航</a></li>
+		</ul>
+	</footer>
+	<!-- 底部结束 -->
+</body>
+</html>
