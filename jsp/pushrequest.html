@@ -122,7 +122,7 @@
 			
 			$("#top_card_add").click(function(){
 				var quantity = parseInt($("#top_card_howmuch").val());
-				var money = quantity * 50;
+				var money = quantity * 20;
 				$("#top_card_money").html("￥"+money);
 				$("#money_details_top_card").show();
 				$("#top_card_money").show();
@@ -131,7 +131,7 @@
 			});
 			$("#top_card_sub").click(function(){
 				var quantity = parseInt($("#top_card_howmuch").val());
-				var money = quantity * 50;
+				var money = quantity * 20;
 				if(quantity == 0){
 					$("#top_card_money").html("￥"+money);
 					$("#money_details_top_card").hide();
@@ -147,7 +147,7 @@
 			
 			$("#height_card_add").click(function(){
 				var quantity = parseInt($("#height_card_howmuch").val());
-				var money = quantity * 50;
+				var money = quantity * 10;
 				$("#height_card_money").html("￥"+money);
 				$("#money_details_height_card").show();
 				$("#height_card_money").show();
@@ -156,7 +156,7 @@
 			});
 			$("#height_card_sub").click(function(){
 				var quantity = parseInt($("#height_card_howmuch").val());
-				var money = quantity * 50;
+				var money = quantity * 10;
 				if(quantity == 0){
 					$("#height_card_money").html("￥"+money);
 					$("#money_details_height_card").hide();
@@ -235,6 +235,141 @@
 					
 				$(".money_summary_span2").html("￥"+sum);
 			}
+			
+			/*悬浮窗口*/
+			$(window).scroll(function(){
+				var sTop = $(window).scrollTop();
+				if(sTop == 0){
+					$("#float").css({
+						position:"absolute",
+						width:"90px",
+						height:"150px",
+						left:"5px",
+						display:"inline-block",
+						top:"136px"
+					});
+				}
+				if(sTop > 0 && sTop < 150){
+					$("#float").css({
+						position:"absolute",
+						width:"90px",
+						height:"150px",
+						left:"5px",
+						display:"inline-block",
+						top:"300px"
+					});
+				}
+				if(sTop < 300 && sTop > 150 ){
+					$("#float").css({
+						position:"absolute",
+						width:"90px",
+						height:"150px",
+						left:"5px",
+						display:"inline-block",
+						top:"450px"
+					});
+				}
+				if(sTop < 450 && sTop > 300){
+					$("#float").css({
+						position:"absolute",
+						width:"90px",
+						height:"150px",
+						left:"5px",
+						display:"inline-block",
+						top:"550px"
+					});
+				}
+				if(sTop < 600 && sTop > 450){
+					$("#float").css({
+						position:"absolute",
+						width:"90px",
+						height:"150px",
+						left:"5px",
+						display:"inline-block",
+						top:"700px"
+					});
+				}
+				if(sTop < 750 && sTop > 600){
+					$("#float").css({
+						position:"absolute",
+						width:"90px",
+						height:"150px",
+						left:"5px",
+						display:"inline-block",
+						top:"900px"
+					});
+				}
+				if(sTop < 900 && sTop > 750){
+					$("#float").css({
+						position:"absolute",
+						width:"90px",
+						height:"150px",
+						left:"5px",
+						display:"inline-block",
+						top:"1000px"
+					});
+				}
+				if(sTop < 1050 && sTop > 900){
+					$("#float").css({
+						position:"absolute",
+						width:"90px",
+						height:"150px",
+						left:"5px",
+						display:"inline-block",
+						top:"1150px"
+					});
+				}
+				if(sTop < 1200 && sTop > 1050){
+					$("#float").css({
+						position:"absolute",
+						width:"90px",
+						height:"150px",
+						left:"5px",
+						display:"inline-block",
+						top:"1250px"
+					});
+				}
+				if(sTop < 1350 && sTop > 1200){
+					$("#float").css({
+						position:"absolute",
+						width:"90px",
+						height:"150px",
+						left:"5px",
+						display:"inline-block",
+						top:"1450px"
+					});
+				}
+				if(sTop < 1400 && sTop > 1350){
+					$("#float").css({
+						position:"absolute",
+						width:"90px",
+						height:"150px",
+						left:"5px",
+						display:"inline-block",
+						top:"1650px"
+					});
+				}
+				if(sTop > 1400 && sTop < 1600){
+					$("#float").css({
+						position:"absolute",
+						width:"90px",
+						height:"150px",
+						left:"5px",
+						display:"inline-block",
+						top:"1750px"
+					});
+				}
+				if(sTop > 1600){
+					$("#float").css({
+						position:"absolute",
+						width:"90px",
+						height:"150px",
+						left:"5px",
+						display:"inline-block",
+						top:"1950px"
+					});
+				}
+			});
 		/************/
 	});
 </script>
@@ -338,8 +473,10 @@
 				</div>
 				<div class="require_type">
 					<button type="button" class="require_type_button">产品需求</button>
+					<!--
 					<button type="button" class="require_type_button">咨询服务</button>
 					<button type="button" class="require_type_button">微咨询</button>
+					-->
 				</div>
 				<div class="require_details_title">
 					<span class="require_details_title_span">明确需求标题和详情</span>
@@ -388,7 +525,7 @@
 						<span class="expect_span">您希望多久完成？</span>
 					</div>
 					<div class="time">
-						<span class="time_span1">完成周期</span>&nbsp;<input class="time_input" type="text" name="time" /> 天&nbsp;<span class="time_span2">最多30天</span>
+						<span class="time_span1">完成周期</span>&nbsp;<input class="time_input" type="text" name="time" pattern="[0-9]|[1-2][0-9]|[3][0]" /> 天&nbsp;<span class="time_span2">最多30天</span>
 					</div>
 					<div class="split_title">
 						<span class="expect_span">赏金怎么分配呢？</span>
@@ -503,6 +640,34 @@
 				<div class="submit">
 					<button class="submit_button" type="submit">发布任务</button>
 				</div>
+			</div>
+		</form>
+		
+		<!-- 悬浮窗口 -->
+		<div id="float">
+			<div class="float_div0">发布精品项目</div>
+			<div class="float_div2">专业发布指导</div>
+			<div class="float_div1">免费帮您发布</div>
+		</div>
+		<!-- 右侧咨询服务 -->
+		<form action="#" method="post">
+			<div id="right">
+				<span class="right_title">发布问题</span><br />
+				<hr />
+				<span class="right_input_message">选择主题分类</span>
+				<select>
+					<option>选择主题分类</option>
+					<option value="土建施工">土建施工</option>
+					<option value="建筑知识">建筑知识</option>
+					<option value="建筑设计">建筑设计</option>
+					<option value="其他问题">其他问题</option>
+					<option value="作业指导">作业指导</option>
+					<option value="生涯疑惑">生涯疑惑</option>
+				</select><br />
+				<span class="right_input_message">请填写标题</span><input class="right_input" type="text" name="right_title" placeholder="还可以填写80个字符" /><br />
+				<span class="right_input_message">请填写联系方式</span><input class="right_input" type="text" name="right_tel" placeholder="QQ/邮箱/TEL" /><br />
+				<span class="right_input_message">请填写提问内容</span><textarea class="right_textarea" name="right_content" placeholder="请输入提问内容!"></textarea><br />
+				<button class="right_button" type="submit">快速提交</button>
 			</div>
 		</form>
 	</div>
