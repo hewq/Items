@@ -1,0 +1,381 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>设置</title>
+<link rel="stylesheet" href="../css/index.css"/>
+<link rel="stylesheet" href="../css/setting.css"/>
+<script src="../js/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		/*侧栏显示与隐藏*/
+		$(".sidebar_td_title_weike").click(function(){
+			$(".sidebar_td_content_weike").slideToggle(300);
+		});
+		$(".sidebar_td_title_message").click(function(){
+			$(".sidebar_td_content_message").slideToggle(300);
+		});
+		$(".sidebar_td_title_free").click(function(){
+			$(".sidebar_td_content_free").slideToggle(300);
+		});
+		$(".sidebar_td_title_economic").click(function(){
+			$(".sidebar_td_content_economic").slideToggle(300);
+		});
+		$(".sidebar_td_title_function").click(function(){
+			$(".sidebar_td_content_function").slideToggle(300);
+		});
+		$(".sidebar_td_title_setting").click(function(){
+			$(".sidebar_td_content_setting").slideToggle(300);
+		});
+		/*导航栏显示*/
+		$("#li_show").hover(function(){
+			$("#li_hide").slideToggle();
+		});
+		/*改变默认标志*/
+		$("#change").click(function(){
+			var checked = $("#li_hide input[name='chceked']:checked").val();
+			if(checked == "guzhu"){
+				$("#show_checked").html("默认标记为:我是雇主");
+			}else if(checked == "weike"){
+				$("#show_checked").html("默认标记为:我是威客");
+			}
+		});
+	});
+</script>
+</head>
+
+<body>
+	<!-- 导航条 -->
+	<header>
+		<ul>
+			<li><a href="#">首页</a><span>|</span></li>
+			<li>
+				<a href="#">服务内容</a>
+				<ul >
+					<li><a href="#">找项目</a></li>
+					<li><a href="#">找研发人员</a></li>
+					<li><a href="#">咨询服务</a></li>
+					<li><a href="#">悬赏大厅</a></li>
+					<li><a href="#">发布要求</a></li>
+					<li><a href="#">项目匹配</a></li>
+					<li><a href="#">人才培养</a></li>
+					<li><a href="#">高成工厂</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li>
+				<a href="#">担保评估</a>
+				<ul>
+					<li><a href="#">重大开发项目</a></li>
+					<li><a href="#">成果转化</a></li>
+					<li><a href="#">担保评价</a></li>
+					<li><a href="#">投资体系</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li>
+				<a href="#">发布信息</a>
+				<ul>
+					<li><a href="#">活动组织</a></li>
+					<li><a href="#">数据信息</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li><a href="#">报道</a><span>|</span></li>
+			<li>
+				<a href="#">信息提交</a>
+				<ul>
+					<li><a href="#">需求提交</a></li>
+					<li><a href="#">成果提交</a></li>
+					<li><a href="#">评审提交</a></li>
+				</ul>
+				<span>|</span>
+			</li>
+			<li><a href="#">外包服务</a><span>|</span></li>
+			<li><a href="#">知识产权</a><span>|</span></li>
+			<li><a href="#">检验检测</a></li>
+		</ul>
+		<div id="header_adiv">
+			<a href="#" class="header_a">登录</a>
+			<a href="#" class="header_a">注册</a>
+		</div>
+	</header>
+	<!-- 导航条结束 -->
+	<!-- 网页主要内容 -->
+	<div id="main">
+		<div id="container">
+			<div id="type">
+				<ul>
+					<li class="type_li"><a href="#">研发人员</a></li>
+					<li class="type_li"><a href="#">企业</a></li>
+					<li class="type_li bingo"><a href="#">设置</a></li>
+				</ul>
+			</div>
+			<div id="nav">
+				<ul>
+					<li><a href="#">网站首页</a>&nbsp;<span>|</span>&nbsp;</li>
+					<li><a href="#">信息</a>&nbsp;<span>|</span>&nbsp;</li>
+					<li><a href="#">帮助中心</a>&nbsp;<span>|</span>&nbsp;</li>
+					<li><a href="#">充值</a>&nbsp;<span>|</span>&nbsp;</li>
+					<div id="li_show">
+						<li class="li_show"><a href="#" id="show_checked">默认标记为:我是雇主</a>&nbsp;<span>|</span>&nbsp;</li>
+						<div id="li_hide">
+							<input name="chceked" class="li_hide_input1" type="radio" value="guzhu" checked/>标记我为雇主<br />
+							<input name="chceked" class="li_hide_input2" type="radio" value="weike" />标记我为威客<br />
+							<button id="change">确 定</button>
+							<p>
+								若选“我是雇主”那么进入管理中心，将默认加载[我是雇主]页面；否则为[我是威客]。
+							</p>
+						</div>
+					</div>
+					<li><a href="#">个人空间</a>&nbsp;<span>|</span>&nbsp;</li>
+					<li><a href="#">退出</a></li>
+				</ul>
+			</div>
+			<div id="content">
+				<div class="content_title">
+					<span class="content_title_span">账号设置 > 基本信息</span>
+				</div>
+				<form action="#" method="post">
+					<div class="content_details">
+						<div class="content_details_span1_div"><span class="content_details_span1">当前头像:</span></div><a href="#" class="content_details_a" title="点击更换头像"><img src="../images/touxiang.png" /></a><br />
+						<span class="content_details_span1">真实姓名:</span><input class="content_details_input" type="text" name="username" /><span class="content_details_span2">一经填写，不可更改，请注意与实名认证姓名及银行开户户名一致。</span><br />
+						<span class="content_details_span1">性 别:</span><input type="radio" name="gender" value="male" checked="checked" />男<input type="radio" name="gender" value="female" />女<br />
+						<span class="content_details_span1">生 日:</span>
+						<select name="year" class="year">
+							<option value="1960">1960</option>
+							<option value="1961">1961</option>
+							<option value="1962">1962</option>
+							<option value="1963">1963</option>
+							<option value="1964">1964</option>
+							<option value="1965">1965</option>
+							<option value="1966">1966</option>
+							<option value="1967">1967</option>
+							<option value="1968">1968</option>
+							<option value="1969">1969</option>
+							<option value="1970">1970</option>
+							<option value="1971">1971</option>
+							<option value="1972">1972</option>
+							<option value="1973">1973</option>
+							<option value="1974">1974</option>
+							<option value="1975">1975</option>
+							<option value="1976">1976</option>
+							<option value="1977">1977</option>
+							<option value="1978">1978</option>
+							<option value="1979">1979</option>
+							<option value="1980">1980</option>
+							<option value="1981">1981</option>
+							<option value="1982">1982</option>
+							<option value="1983">1983</option>
+							<option value="1984">1984</option>
+							<option value="1985">1985</option>
+							<option value="1986">1986</option>
+							<option value="1987">1987</option>
+							<option value="1988">1988</option>
+							<option value="1989">1989</option>
+							<option value="1990">1990</option>
+							<option value="1991">1991</option>
+							<option value="1992">1992</option>
+							<option value="1993">1993</option>
+							<option value="1994">1994</option>
+							<option value="1995">1995</option>
+							<option value="1996">1996</option>
+							<option value="1997">1997</option>
+							<option value="1998">1998</option>
+							<option value="1999">1999</option>
+							<option value="2000">2000</option>
+							<option value="2001">2001</option>
+							<option value="2002">2002</option>
+							<option value="2003">2003</option>
+							<option value="2004">2004</option>
+							<option value="2005">2005</option>
+							<option value="2006">2006</option>
+							<option value="2007">2007</option>
+							<option value="2008">2008</option>
+							<option value="2009">2009</option>
+							<option value="2010">2010</option>
+							<option value="2011">2011</option>
+							<option value="2012">2012</option>
+							<option value="2013">2013</option>
+							<option value="2014">2014</option>
+							<option value="2015">2015</option>
+							<option value="2016">2016</option>
+						</select>
+						<span>年</span>
+						<select name="month" class="month">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+						</select>
+						<span>月</span>
+						<select name="day" class="day">
+							<option value="1">1</option>
+							<option value="2">2</option>
+							<option value="3">3</option>
+							<option value="4">4</option>
+							<option value="5">5</option>
+							<option value="6">6</option>
+							<option value="7">7</option>
+							<option value="8">8</option>
+							<option value="9">9</option>
+							<option value="10">10</option>
+							<option value="11">11</option>
+							<option value="12">12</option>
+							<option value="13">13</option>
+							<option value="14">14</option>
+							<option value="15">15</option>
+							<option value="16">16</option>
+							<option value="17">17</option>
+							<option value="18">18</option>
+							<option value="19">19</option>
+							<option value="20">20</option>
+							<option value="21">21</option>
+							<option value="22">22</option>
+							<option value="23">23</option>
+							<option value="24">24</option>
+							<option value="25">25</option>
+							<option value="26">26</option>
+							<option value="27">27</option>
+							<option value="28">28</option>
+							<option value="29">29</option>
+							<option value="30">30</option>
+							<option value="31">31</option>
+						</select>
+						<span>日</span><br />
+						<span class="content_details_span1">威客主页名称:</span><input class="content_details_input2" name="index_name" type="text" /><br />
+						<div class="introduce_div"><span class="content_details_span1">自我介绍:</span></div><textarea class="content_details_textarea" name="introduce"></textarea><br />
+						<span class="content_details_span3">最多可输入2000个字符，支持中文、英文</span><br />
+						<div><span class="content_details_span1">个性签名:</span></div><textarea class="content_details_textarea" name="think"></textarea><br />
+						<span class="content_details_span3">最多可输入200个字符，支持中文、英文</span><br />
+						<button class="setting_button" type="submit">保 存</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div id="sidebar">
+			<table class="sidebar_table">
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_title_weike">我是威客</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_weike">我参与的项目</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_weike">雇佣我的项目</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_weike">我中标的项目</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_title_message">信息管理</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_message">我的收件箱</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_message">我的发件箱</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_message">发送消息</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_message">我的好友</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_title_free">免费开店</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_free">我要开店</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_title_setting">账号设置</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_setting">基本信息</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_setting">联系方式</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_setting">实名认证</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_setting">银行账号</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_setting">修改密码</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_setting">设置安全保护</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_setting">邮寄地址</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_setting">名片</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_title_economic">财务管理</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_economic">充值</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_economic">提现</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_economic">交易记录</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_title_function">其他功能</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_function">我的文件夹</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_function">我的收藏</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_function">管理日志</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_function">管理相册</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_function">管理作品</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_function">发表日志</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_function">添加相片</td>
+				</tr>
+				<tr class="sidebar_tr">
+					<td class="sidebar_td_content_function">上传作品</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+	<!-- 网页主要内容结束 -->
+	<!-- 底部 -->
+	<footer>
+		<ul>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">工具</a></li>
+			<li><a href="#">规则</a></li>
+			<li><a href="#">新手入门</a></li>
+			<li><a href="#">快速导航</a></li>
+		</ul>
+	</footer>
+	<!-- 底部结束 -->
+</body>
+</html>
